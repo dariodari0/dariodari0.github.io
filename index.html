@@ -27,6 +27,7 @@ a
 div.frontPage
 {
 	-webkit-animation: fadein 3s ;
+		animation: fadein 3s ;
 }
 
 @keyframes fadein {
@@ -65,10 +66,10 @@ div.topBar span.contactClose
 div.contactPage
 {
 	position: fixed ;
-    top: 0px ;
-    left: 0px ;
-    right: 0px ;
-    bottom: 0px ;
+    	top: 0px ;
+    	left: 0px ;
+    	right: 0px ;
+    	bottom: 0px ;
 	overflow: hidden ; 
 	display: none ;
 	background-color:rgba(0,188,212, 0.9) ;
@@ -206,14 +207,15 @@ button.indexClose
 	right: 2.4% ;
 }
 svg {
-    width: 100% ;
-    height: 114% ;
+   	 width: 100% ;
+    	height: auto ;
  	position:absolute ;
 	fill: rgba(224,224,224,1) ;
+	left: 2% ;
 }
 svg text {
 	font-family: 'Amatic SC' ;
-    font-size: 7.5em ;
+    	font-size: 7.5em ;
 }
 svg mask rect 
 {
@@ -221,8 +223,8 @@ svg mask rect
 }
 svg > rect 
 {
-    -webkit-mask: url(#mask) ;
-    mask: url(#mask) ;
+   	 -webkit-mask: url(#mask) ;
+   	 mask: url(#mask) ;
 }
 video{
 	position: absolute ;
@@ -331,10 +333,10 @@ div.bottomBar a
 					  <defs>
 						<mask id="mask" x="0" y="0" width="1920" height="1080" >
 						  <rect x="0" y="0" width="1920" height="1080"/>
-							<text x=".41em" >
+							<text>
 							  <textPath xlink:href="#path">Pasja nie nudzi. Pasja fascynuje.</textPath>
 								</text>
-							<text x=".41em"  >
+							<text>
 							  <textPath xlink:href="#path2">Tym dla mnie właśnie stało się programowanie ;-).</textPath>
 								</text>
 						</mask>
