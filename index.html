@@ -304,6 +304,12 @@ div.bottomBar a
 	{	
 		display: none ;
 	}
+	div.scrollFrontPage:not(.bottomBar)
+	{
+	background-color:rgb(241,196,15) ;
+	padding-top: 14% ;
+	margin: -6%;
+	}
 	div.indexCV
 	{
 		width: 100% ;
@@ -312,7 +318,6 @@ div.bottomBar a
 	div.indexCV ul
 	{
 		top: 10% ; 
-		left: 20% ;
 	}
 	svg
 	{
@@ -321,10 +326,7 @@ div.bottomBar a
 	}
 	div.scrollFrontPage
 	{
-		position: absolute;
-		top: 10% ;
 		text-align: justify ;
-		
 	}
 	div.scrollFrontPage div
 	{
@@ -343,31 +345,40 @@ div.bottomBar a
 	{
 		background-color:rgb(0,0,0) ;	
 	}
+	div.contactPage img 
+	{
+		top: 5% ;
+		right: 48% ;
+	}
 	div.contactPage form
 	{
-		width: 320px ;
+		width: 280px ;
+		left: 45%;
 	}
 	div.contactPage input, div.contactPage textarea
 	{
-		width: 300px ;
+		width: 260px ;
 	}
 	div.contactPage input[type=submit]
 	{
-		width: 332px;
+		width: 292px;
 	}
 	div.topBar span.contactClick:before
 	{
-	content: ' ';
+		content: ' ';
 	}
 	div.topBar span.contactClose:before
 	{
-	content: ' X';
-	
+		content: ' X';
+	}
+	div.contactPage .contactMore 
+	{
+		top: 55% ; 
 	}
 	div.topBar span.contactClose
 	{
 		top: 2%;
-		left: 90%;
+		left: 85%;
 	}
 	video
 	{
