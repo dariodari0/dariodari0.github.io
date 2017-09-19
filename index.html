@@ -7,13 +7,20 @@
 <meta name="author" content="Dariusz Markowicz">
 <meta name="robots" content="noindex, nofollow">
 <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+
 <style type="text/css">
 /*<![CDATA[*/ 
+html {
+	font-family: 'Quicksand', sans-serif;
+}
 body 
 {
 	margin:0;
 	height: 100%;
-	background-color: rgb(224,224,224);	
+	background-color: #f1c40f;	
 }
 ::-webkit-scrollbar {
   	  width: 0px ; 
@@ -24,10 +31,10 @@ a
 	text-decoration: none ;
 	color: #000;
 }
+
 div.frontPage
 {
 	-webkit-animation: fadein 3s ;
-		animation: fadein 3s ;
 }
 
 @keyframes fadein {
@@ -38,41 +45,39 @@ div.topBar
 {
 	position: fixed ;
 	top:0 ;
-	font-family: 'Amatic SC' ;
-	background-color:rgba(0,188,212, 0.6) ;
+	background-color:rgba(0,0,0, 0.6) ;
  	font-size:1.9em ;
 	height: 10% ;
 	width: 100% ;
 	z-index:100 ;
-	color: #E0E0E0 ;
+	color: #fff ;
 }
 div.topBar span.contactClick
 {
 	position: inherit ;
 	top: 2% ;
 	left: 2% ;
+	cursor: pointer ;
 }
-div.topBar span:hover
-{
-	font-size:1.2em ;
-}
+
 div.topBar span.contactClose
 {
 	display: none ;
 	position: inherit ;
 	bottom: 3% ;
 	left: 2% ;
+	cursor: pointer ;
 }
 div.contactPage
 {
 	position: fixed ;
-    	top: 0px ;
-    	left: 0px ;
-    	right: 0px ;
-    	bottom: 0px ;
+    top: 0px ;
+    left: 0px ;
+    right: 0px ;
+    bottom: 0px ;
 	overflow: hidden ; 
 	display: none ;
-	background-color:rgba(0,188,212, 0.9) ;
+	background-color:rgba(0,0,0, 0.8) ;
 	z-index:98 ;
 
 }
@@ -86,15 +91,14 @@ div.contactPage form
 }
 div.contactPage input, div.contactPage textarea
 {
-	font-family: 'Amatic SC' ;
-	color: #E0E0E0 ;
+	color: #FFF ;
 	font-size:1.5em ;
 	width: 470px ;
 	height: 50px ;
 	padding: 0px 15px 0px 15px ;
 	background: transparent ;
 	outline: none ;
-	border: solid 1px #000 ; 
+	border: solid 1px #f1c40f ; 
 	transition: all 0.3s ease-in-out ;
 	-webkit-transition: all 0.3s ease-in-out ;
 }
@@ -117,7 +121,7 @@ div.contactPage textarea
 
 div.contactPage input:hover, div.contactPage textarea:hover
 {
-	background-color: rgba(0,0,0,0.2) ;
+	background-color: rgba(255,255,255,0.2) ;
 }
 
 div.contactPage .contactMore 
@@ -133,8 +137,6 @@ div.contactPage .contactMore ul
 }
 div.contactPage .contactMore li
 {
-	
-	font-family: 'Amatic SC' ;
 	font-size:1.8em ;
 }
 div.contactPage img 
@@ -148,18 +150,21 @@ button.indexClick, button.indexClose
 	position:fixed ;
 	top: 2% ;
 	right: 2% ;
-	font-family: 'Amatic SC' ;
-	color: #E0E0E0 ;
+	color: #fff ;
 	background:none ;
 	font-size:1.1em ;
 	border: none ;
 	outline:none ;
 	cursor: pointer ;
+	z-index:2;
 
 }
-button.indexClick:hover, button.indexClose:hover
+button.indexClick:before
 {
-	font-size: 1.25em ;
+	content: url(media/yMenu.png) ;
+	position: fixed;
+	right: 4.9%;
+	top: 2%;
 }
 
 div.indexCV
@@ -169,62 +174,67 @@ div.indexCV
 	right: 0 ;
 	display: none ;
 	width: 25% ;
-	height: 60% ;
-	background-color:rgba(0,188,212, 0.6) ;
+	height: 90%;
+	background-color:rgba(0,0,0, 0.6) ;
 	z-index:100 ;
  
 }
 div.indexCV a 
 {
-	color: #E0E0E0 ;
+	color: #fff ;
 }
+
 div.indexCV ul
 {
 	position: absolute ;
 	list-style-type: none ;
-	font-family: 'Amatic SC' ;
 	font-size:1.8em ;
-	color: #494949 ;
-	
 }
 
 div.indexCV li
 {	
-	
-	padding-bottom: 5% ;	
+	padding-bottom: 3% ;	
+	cursor: pointer ;
+}
+div.indexCV a:after 
+{
+	content: '';
+	display: block;
+	height: 3px;
+	width: 0;
+	background: transparent;
+	transition: width .5s ease, background-color .5s ease;
+}
+div.indexCV a:hover:after 
+{
+	width: 100%;
+	background: #f1c40f;
 }
 
-div.indexCV li:hover 
-{
-	cursor: pointer ;
-	font-size:1.35em ;	
-}
 button.indexClose
 {
 	display:none ;
 	position: inherit ;
 	top: 2% ;
 	right: 2.4% ;
+	
 }
 svg {
-   	 width: 100% ;
-    	height: auto ;
- 	position:absolute ;
-	fill: rgba(224,224,224,1) ;
-	left: 2% ;
+    width: 100% ;
+    height: auto ;
+	fill: rgba(0,0,0, 0.8) ;
 }
 svg text {
-	font-family: 'Amatic SC' ;
-    	font-size: 7.5em ;
+	font-size: 4.4em ;	
 }
 svg mask rect 
 {
-	fill: rgb(0,0,0) ;
+	fill: rgba(255,255,255, 0.5) ;
 }
 svg > rect 
 {
-   	 -webkit-mask: url(#mask) ;
-   	 mask: url(#mask) ;
+    -webkit-mask: url(#mask) ;	
+    mask: url(#mask) ;
 }
 video{
 	position: absolute ;
@@ -241,12 +251,11 @@ div.scrollFrontPage
 	position: absolute ;
 	margin: 0px ;
 	padding: 0px ;
-	font-family: 'Amatic SC' ;
  	width: 100% ;
+	top: 120% ;
 	height: auto ;
 	font-size:1.5em ;
-	color: #494949 ;
-	top: 114% ;
+	color: #000 ;
 	
 }
 div.scrollFrontPage h1
@@ -257,33 +266,31 @@ div.scrollFrontPage h1
 div.scrollFrontPage hr
 {
 	width: 100% ;
-	border-color: #494949 ;
+	border-color: #000 ;
 	border-width: 1px ;
 }
 div.scrollFrontPage p
 {
 	font-size: 1.5em ;
 }
-div.scrollFrontPage a:hover
-{
-	font-size: 1.2em ;
-}
+
 div.aboutME
 {	
 	position: relative ;
-	width: 50% ;
+	width: 55% ;
 	float: left ;
-	left: 25% ;
+	left: 22.5% ;
 	text-align: justify ;
 }
 div.skills, div.hobby, div.experience, div.education, div.qualifications
 {
 	clear: left ;
 	position: relative ;
-	width: 50% ;
+	width: 55% ;
 	float: left ;
-	left: 25% ;
+	left: 22.5% ;
 	text-align: justify ;
+	padding-top: 5% ;
 }
 div.aboutME img
 {
@@ -325,18 +332,18 @@ div.bottomBar a
  
 		<svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 1920 1080" width="1920px" height="1080px" preserveAspectRatio="xMidYMid slice">
 		 <path id="path">
-			<animate attributeName="d" from="m0,750 h0" to="m0,650 h1220" dur="6.8s" begin="0s" fill="freeze" 	repeatCount="1"/>
+			<animate attributeName="d" from="m0,750 h0" to="m0,650 h1220" dur="6.8s" begin="0s" fill="freeze"  />
 			</path>
 			<path id="path2">
-			<animate attributeName="d" from="m0,850 h0" to="m0,750 h1790" dur="8s" begin="6.8s" fill="freeze"	repeatCount="1" fill="freeze"/>
+			<animate attributeName="d" from="m0,820 h0" to="m0,720 h1790" dur="8s" begin="6.8s" fill="freeze"  fill="freeze"/>
 			</path>
 					  <defs>
 						<mask id="mask" x="0" y="0" width="1920" height="1080" >
 						  <rect x="0" y="0" width="1920" height="1080"/>
-							<text>
+							<text  x="2%">
 							  <textPath xlink:href="#path">Pasja nie nudzi. Pasja fascynuje.</textPath>
 								</text>
-							<text>
+							<text x="2%">
 							  <textPath xlink:href="#path2">Tym dla mnie właśnie stało się programowanie ;-).</textPath>
 								</text>
 						</mask>
@@ -358,8 +365,8 @@ div.bottomBar a
 		<a onclick="scrollToDivClass('experience');">		<li>Doświadczenie </li></a>
 		<a onclick="scrollToDivClass('education');">		<li>Edukacja </li></a>
 		<a onclick="scrollToDivClass('qualifications');">	<li>Kwalifikacje </li></a>
-		<a href="CV_2017pl.pdf" target="_blank"		 >	<li>Pobierz  PDF </li></a>
-		<a href="a4ang.html"><li>English Version <img class="indexCVimg" src="media/ang12.png" alt="english flag"></li></a>
+		<a href="CV_2017pl.pdf" target="_blank"		 >		<li>Pobierz  PDF </li></a>
+		<a href="a4ang.html">								<li>English Version <img class="indexCVimg" src="media/ang12.png" alt="english flag"></li></a>
 	</ul>
 
 
@@ -379,7 +386,7 @@ div.bottomBar a
 			<ul>
 				<a href="https://www.facebook.com/dariodaruo92" target="_blank"><li title="Mój profil na Facebooku" style="list-style-image: url('media/facebook.png');"></li></a>
 				<a href="https://www.linkedin.com/in/dariusz-markowicz-903447131/" target="_blank"><li title="Mój profil na LinkedIn" style="list-style-image: url('media/linkedin.png');"></li></a>
-				<a href="https://github.com/dariodari0" target="_blank"><li title="Moje repo" style="list-style-image: url('media/github.png');"></li></a>
+				<a href="https://github.com/dariodari0" target="_blank"><li title="Moje repo" style="list-style-image: url('media/githhub.png');"></li></a>
 				<a href="tel:+48510958811"><li title="tel.\kom. +510958811" style="list-style-image: url('media/phone48.png');"></li></a>
 					</ul>
 		</div>
@@ -399,8 +406,8 @@ div.bottomBar a
 	<div class="skills"> 
 			<h1> UMIEJĘTNOŚCI </h1>
 			<hr>
-			<p>	<strong>Kodowanie:</strong> C/C++, Front-End Development, Podstawy PHP&amp;MySQL.<br />
-				<strong>Standardy:</strong>  STL, OOP, C++11, OSI model, ECMAScript 6, HTML5, CSS3. <br />     
+			<p>	<strong>Kodowanie:					</strong> C/C++, Front-End Development, Podstawy PHP&amp;MySQL.<br />
+				<strong>Standardy:					</strong>  STL, OOP, C++11, OSI model, ECMAScript 6, HTML5, CSS3. <br />     
 				<strong>Edytory &amp; kompilatory:	</strong>  Qt, cmd, NotePad++, Visual Studio, C-lion.<br />
 				<strong>System:						</strong>  Linux Manjaro17 and Win10, macOS Sierra 10.12.6.</p>
 	</div>
@@ -455,7 +462,7 @@ div.bottomBar a
 			<p>Prawo jazdy (kat. B).</p>
 	</div>
 	<div class="bottomBar">
-	<a onclick="scrollToDivClass('frontMovie');"> Do GÓRY</a>
+	<a onclick="scrollToDivClass('frontMovie');"> Do góry</a>
  
 	</div>
 	
@@ -491,8 +498,8 @@ $( document ).ready(function() {
 		});
 
 	$(".contactClick").click(function() {
-	$( ".contactClick, .indexClose, .indexClick, .indexCV" ).fadeOut(.003);
-	$( ".topBar" ).css("background-color", "rgba(0,188,212, 0)");
+	$( ".contactClick, .indexClose, .indexClick, .indexCV, svg" ).fadeOut(.003);
+	$( ".topBar" ).css("background-color", "rgba(0,0,0, 0)");
 	$( "body" ).css("overflow-y", "hidden");
 	
 		$(".contactPage").slideToggle(400, function ()
@@ -509,9 +516,8 @@ $( document ).ready(function() {
 	$("video").each(function () { this.play() });
 		$(".contactPage").slideToggle(400, function () 
 		{	
-				$(".topBar").css("background-color", "rgba(0,188,212, 0.6)").hide().fadeIn(400);
-				$( ".contactClick" ).delay(.003).fadeIn();
-				$( ".indexClick" ).delay(.003).fadeIn();
+				$(".topBar").css("background-color", "rgba(0,0,0, 0.6)").hide().fadeIn(400);
+				$( ".contactClick, .indexClick, svg" ).delay(.003).fadeIn();
 				
 		});
 	});	
