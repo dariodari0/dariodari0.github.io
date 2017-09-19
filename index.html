@@ -57,7 +57,10 @@ div.topBar span.contactClick
 	left: 2% ;
 	cursor: pointer ;
 }
-
+div.topBar span.contactClick:before
+{
+	content: 'Napisz do mnie';
+}
 div.topBar span.contactClose
 {
 	display: none ;
@@ -65,6 +68,10 @@ div.topBar span.contactClose
 	bottom: 3% ;
 	left: 2% ;
 	cursor: pointer ;
+}
+div.topBar span.contactClose:before
+{
+	content: 'Showaj panel kontaktowy';
 }
 div.contactPage
 {
@@ -76,6 +83,7 @@ div.contactPage
 	overflow: hidden ; 
 	display: none ;
 	background-color:rgba(0,0,0, 0.8) ;
+	z-index: 1; 	
 }
 div.contactPage form
 {
@@ -152,15 +160,16 @@ button.indexClick, button.indexClose
 	border: none ;
 	outline:none ;
 	cursor: pointer ;
-	z-index:2;
+	z-index:2 ;
 }
 button.indexClick:before
 {
 	content: url(media/yMenu.png) ;
 	position: fixed;
-	right: 4.9%;
+	right: 5%;
 	top: 2%;
-}
+	z-index: 1 ;
+}  
 
 div.indexCV
 {
@@ -216,7 +225,7 @@ button.indexClose
 }
 svg {
     width: 100% ;
-    height: auto ;
+    height: 100% ;
 	fill: rgba(0,0,0, 0.8) ;
 }
 svg text {
@@ -239,7 +248,7 @@ video{
 	min-height: 100% ;
 	width: auto ;
 	height: auto ;
-	z-index: -1 ;
+	z-index: -2 ;
 }
 div.scrollFrontPage:not(.bottomBar)
 {
@@ -247,6 +256,7 @@ div.scrollFrontPage:not(.bottomBar)
 	flex-direction: column ;
 	align-items: center ;
 	justify-content: center ;
+	text-align: justify ;
 }
 div.scrollFrontPage hr
 {
@@ -268,18 +278,91 @@ div.aboutME img
 div.bottomBar 
 {	
 	float: left ;
-	width: 100% ;
 	position: relative ;
 	text-align: right ;
 	right: 2% ;
-	bottom: 2% ;
-	font-size:1.5em ;
+	font-size:1.7em ;
 	cursor: pointer ;
+	padding: 20px ;
+	border: solid 1px black;
 	
 }
 div.bottomBar a
 {
 	color: #000 ;
+}
+
+@media screen and (max-width: 780px) {
+    #cv
+	{	
+		display: none ;
+	}
+	div.indexCV
+	{
+		width: 100% ;
+		height: 100% ;
+	}
+	div.indexCV ul
+	{
+		top: 10% ; 
+		left: 20% ;
+	}
+	svg
+	{
+		width: 0% ;
+		height: 0% ;
+	}
+	div.scrollFrontPage
+	{
+		position: absolute;
+		top: 10% ;
+		text-align: justify ;
+		
+	}
+	div.scrollFrontPage div
+	{
+		position: relative;
+		height: auto ; 
+	}
+	div.scrollFrontPage div:not(.bottomBar)
+	{
+		width: 90% ;
+		z-index: -1;
+	}
+	div.scrollFrontPage p
+	{
+		font-size: 1.35em;
+	}
+	div.contactPage
+	{
+	background-color:rgb(0,0,0) ;	
+	}
+	div.contactPage form
+	{
+		width: 320px ;
+	}
+	div.contactPage input, div.contactPage textarea
+	{
+		width: 300px ;
+	}
+	div.contactPage input[type=submit]
+	{
+		width: 332px;
+	}
+	div.topBar span.contactClick:before
+	{
+	content: ' ';
+	}
+	div.topBar span.contactClose:before
+	{
+	content: ' X';
+	
+	}
+	div.topBar span.contactClose
+	{
+		top: 2%;
+		left: 90%;
+	}
 }
  
 /*]]>*/
@@ -291,9 +374,9 @@ div.bottomBar a
 
 <div class="frontPage">
 	<div class="topBar">
-		<span class="contactClick">Napisz do mnie </span>
-		<span class="contactClose">Showaj panel kontaktowy</span> 
-		<button  class="indexClick">CV</button>
+		<span class="contactClick"><img src="media/writeIcon2.png" alt="obscurabus logo"></span>
+		<span class="contactClose"></span> 
+		<button  class="indexClick"><span id="cv">CV</span></button>
 		<button class="indexClose" >X</button>
 	</div>
 <div class="frontMovie">	
