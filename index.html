@@ -7,6 +7,8 @@
 <meta name="author" content="Dariusz Markowicz">
 <meta name="robots" content="noindex, nofollow">
 <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+
 <style type="text/css">
 /*<![CDATA[*/ 
 html {
@@ -14,9 +16,9 @@ html {
 }
 body 
 {
-	margin:0;
-	height: 100%;
-	background-color: #f1c40f;	
+	margin:0 ; 
+	height: 100% ;
+	background-color: #F1C40F ;	
 }
 ::-webkit-scrollbar {
   	  width: 0px ; 
@@ -25,7 +27,7 @@ body
 a
 {
 	text-decoration: none ;
-	color: #000;
+	color: #000 ;
 }
 
 div.frontPage
@@ -67,15 +69,13 @@ div.topBar span.contactClose
 div.contactPage
 {
 	position: fixed ;
-   	top: 0px ;
-   	left: 0px ;
-    	right: 0px ;
-    	bottom: 0px ;
+	top: 0% ;
+	right: 0% ;
+	bottom: 0% ;
+	left: 0% ;
 	overflow: hidden ; 
 	display: none ;
 	background-color:rgba(0,0,0, 0.8) ;
-	z-index:98 ;
-
 }
 div.contactPage form
 {
@@ -94,7 +94,7 @@ div.contactPage input, div.contactPage textarea
 	padding: 0px 15px 0px 15px ;
 	background: transparent ;
 	outline: none ;
-	border: solid 1px #f1c40f ; 
+	border: solid 1px #F1C40F ; 
 	transition: all 0.3s ease-in-out ;
 	-webkit-transition: all 0.3s ease-in-out ;
 }
@@ -153,7 +153,6 @@ button.indexClick, button.indexClose
 	outline:none ;
 	cursor: pointer ;
 	z-index:2;
-
 }
 button.indexClick:before
 {
@@ -194,17 +193,17 @@ div.indexCV li
 }
 div.indexCV a:after 
 {
-	content: '';
-	display: block;
-	height: 3px;
-	width: 0;
-	background: transparent;
-	transition: width .5s ease, background-color .5s ease;
+	content: '' ;
+	display: block ;
+	height: 3px ; 
+	width: 0 ;
+	background: transparent ;
+	transition: width .5s ease, background-color .5s ease ;
 }
 div.indexCV a:hover:after 
 {
-	width: 100%;
-	background: #f1c40f;
+	width: 100% ;
+	background: #F1C40F ;
 }
 
 button.indexClose
@@ -242,51 +241,25 @@ video{
 	height: auto ;
 	z-index: -1 ;
 }
-div.scrollFrontPage
+div.scrollFrontPage:not(.bottomBar)
 {
-	position: absolute ;
-	margin: 0px ;
-	padding: 0px ;
- 	width: 100% ;
-	top: 120% ;
-	height: auto ;
-	font-size:1.5em ;
-	color: #000 ;
-	
-}
-div.scrollFrontPage h1
-{
-	text-align: center ;
- 
+	display: flex ;
+	flex-direction: column ;
+	align-items: center ;
+	justify-content: center ;
 }
 div.scrollFrontPage hr
 {
 	width: 100% ;
-	border-color: #000 ;
-	border-width: 1px ;
+	border: #000 1px solid ;
 }
 div.scrollFrontPage p
 {
 	font-size: 1.5em ;
 }
-
-div.aboutME
-{	
-	position: relative ;
-	width: 55% ;
-	float: left ;
-	left: 22.5% ;
-	text-align: justify ;
-}
-div.skills, div.hobby, div.experience, div.education, div.qualifications
+div.scrollFrontPage div:not(.bottomBar)
 {
-	clear: left ;
-	position: relative ;
 	width: 55% ;
-	float: left ;
-	left: 22.5% ;
-	text-align: justify ;
-	padding-top: 5% ;
 }
 div.aboutME img
 {
@@ -494,7 +467,8 @@ $( document ).ready(function() {
 		});
 
 	$(".contactClick").click(function() {
-	$( ".contactClick, .indexClose, .indexClick, .indexCV, svg" ).fadeOut(.003);
+	$( "svg" ).css("visibility", "hidden");
+	$( ".contactClick, .indexClose, .indexClick, .indexCV" ).fadeOut(.003);
 	$( ".topBar" ).css("background-color", "rgba(0,0,0, 0)");
 	$( "body" ).css("overflow-y", "hidden");
 	
@@ -508,20 +482,16 @@ $( document ).ready(function() {
 
 	$(".contactClose").click(function () {
 	$(".contactClose" ).fadeOut(.003);
+	$( "svg" ).css("visibility", "visible").hide().fadeIn(400);;
 	$( "body" ).css("overflow-y", "");
 	$("video").each(function () { this.play() });
 		$(".contactPage").slideToggle(400, function () 
 		{	
 				$(".topBar").css("background-color", "rgba(0,0,0, 0.6)").hide().fadeIn(400);
-				$( ".contactClick, .indexClick, svg" ).delay(.003).fadeIn();
+				$( ".contactClick, .indexClick" ).delay(.003).fadeIn();
 				
 		});
 	});	
-
-		<!-- $("a").click(function () { -->
-			<!-- $( ".indexClose, .indexCV" ).fadeOut(.002);	 -->
-			<!-- $(" .indexClick" ).fadeIn(.003); -->
-		<!-- }); -->
 });
 
 </script>
