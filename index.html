@@ -7,27 +7,28 @@
 <meta name="author" content="Dariusz Markowicz">
 <meta name="robots" content="noindex, nofollow">
 <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+<!-- <script src="http://code.jquery.com/jquery-1.9.1.js"></script>  -->
 
+<!-- <script>  -->
+<!-- $(function() { -->
+<!-- $("#includedContent").load("b.html");  -->
+<!-- });  -->
+<!-- </script> -->
 
 <style type="text/css">
 /*<![CDATA[*/ 
-html {
+html,body  {
 	font-family: 'Quicksand', sans-serif;
-}
-body 
-{
-	margin:0 ; 
-	height: 100% ;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 ::-webkit-scrollbar {
   	  width: 0px ; 
   	  background: transparent ;  
 }	
-a
-{
-	text-decoration: none ;
-	color: #000 ;
-}
+ 
 
 div.frontPage
 {
@@ -62,6 +63,7 @@ div.topBar
 	width: 100% ;
 	z-index:100 ;
 	color: #fff ;
+	
 }
 div.topBar span.contactClick
 {
@@ -69,6 +71,7 @@ div.topBar span.contactClick
 	top: 2% ;
 	left: 2% ;
 	cursor: pointer ;
+	display: block ;
 }
 div.topBar span.contactClick:before
 {
@@ -89,8 +92,6 @@ div.topBar span.contactClose:before
 div.contactPage
 {
 	position: fixed ;
-	max-width: 100% ;
-	max-height: 100% ;
 	top: 0 ;
 	right: 0 ;
 	bottom: 0 ;
@@ -99,24 +100,32 @@ div.contactPage
 	display: none ;
 	background-color:rgba(0,0,0, 0.8) ;
 	z-index: 1;
-}
-div.contactPage form
-{
-	min-width: 80%;
-	position: absolute;
-	top: 30%;
-	left: 25% ;
+	
 	
 }
+.contactForm 
+{
+	max-width: 48%;
+	max-height: 55%;
+	margin: 15% auto ;
+	display: table ;
+}
+
+div.contactPage form
+{
+	width: 100%;
+	height: 100%;
+}
+
 div.contactPage input, div.contactPage textarea
 {
 	padding: 1% 0% 1% 1%;
 	color: #FFF ;
 	font-size:1.5em ;
-	width: 60.1%;
+	width: 100%;
 	background: transparent ;
 	outline: none ;
-	border: solid 1px #F1C40F ; 
+	border: solid 4px #F1C40F ; 
 	transition: all 0.3s ease-in-out ;
 	-webkit-transition: all 0.3s ease-in-out ;
 }
@@ -126,12 +135,12 @@ div.contactPage input[type=text], div.contactPage input[type=email]
 }
 div.contactPage input[type=submit]
 {	
-	margin-top: -4px;
-	width: 61.3% ;
+	margin-top: -4px ;
+	width: 102.2% ;
 }
 div.contactPage textarea 
 {
-	width: 60.1% ;
+ 
 	height: 9em ;
 	border-bottom: none ;
 	font-size: 1.4em ;
@@ -160,8 +169,7 @@ div.contactPage .contactMore li
 div.contactPage img 
 {
 	position: absolute ;
-	top: 15% ;
-	left: 46.5% ;
+	margin: 10% 49% ;
 } 
 button.indexClick, button.indexClose
 {
@@ -195,25 +203,28 @@ div.indexCV
 	height: 90%;
 	background-color:rgba(0,0,0, 0.6) ;
 	z-index:100 ;
- 
+}
+div.indexCV ul
+{
+	list-style-type: none ;
+	font-size:1.8em ;
+	margin auto 0% ;
+	padding: 0 ;
+	
+}
+div.indexCV li
+{	
+	
+	cursor: pointer ;
 }
 div.indexCV a 
 {
+	padding: 10px 30px 10px 30px ;
+	text-decoration: none ;
+	display: block ;
 	color: #fff ;
 }
 
-div.indexCV ul
-{
-	position: absolute ;
-	list-style-type: none ;
-	font-size:1.8em ;
-}
-
-div.indexCV li
-{	
-	padding-bottom: 3% ;	
-	cursor: pointer ;
-}
 div.indexCV a:after 
 {
 	content: '' ;
@@ -228,7 +239,6 @@ div.indexCV a:hover:after
 	width: 100% ;
 	background: #F1C40F ;
 }
-
 button.indexClose
 {
 	display:none ;
@@ -253,6 +263,11 @@ svg > rect
 {
     -webkit-mask: url(#mask) ;	
     mask: url(#mask) ;
+}
+div.scrollFrontPage a
+{
+	text-decoration: none ;
+	color: #000 ;
 }
 
 div.scrollFrontPage:not(.bottomBar)
@@ -435,14 +450,14 @@ div.bottomBar a
 		
 <div class="indexCV">
 	<ul>
-		<a onclick="scrollToDivClass('aboutME');">			<li>O mnie</li></a>
-		<a onclick="scrollToDivClass('skills');">			<li>Umiejętności</li></a>
-		<a onclick="scrollToDivClass('hobby');">			<li>Hobby </li></a>
-		<a onclick="scrollToDivClass('experience');">		<li>Doświadczenie </li></a>
-		<a onclick="scrollToDivClass('education');">		<li>Edukacja </li></a>
-		<a onclick="scrollToDivClass('qualifications');">	<li>Kwalifikacje </li></a>
-		<a href="CV_2017pl.pdf" target="_blank"		 >		<li>Pobierz  PDF </li></a>
-		<a href="a4ang.html">								<li>English Version <img class="indexCVimg" src="media/ang12.png" alt="english flag"></li></a>
+			<li><a onclick="scrollToDivClass('aboutME');">			O mnie			</a></li>
+			<li><a onclick="scrollToDivClass('skills');">			Umiejętności	</a></li>
+	    	<li><a onclick="scrollToDivClass('hobby');">			Hobby 			</a></li>
+			<li><a onclick="scrollToDivClass('experience');">		Doświadczenie 	</a></li>
+			<li><a onclick="scrollToDivClass('education');">		Edukacja 		</a></li>
+			<li><a onclick="scrollToDivClass('qualifications');">	Kwalifikacje 	</a></li>
+			<li><a href="CV_2017pl.pdf" target="_blank">			Pobierz  PDF 	</a></li>
+			<li><a href="a4ang.html">English Version <img class="indexCVimg" src="media/ang12.png" alt="english flag"></a></li>
 	</ul>
 
 
@@ -555,6 +570,7 @@ div.bottomBar a
 </script>
 
 <script type="text/javascript">
+
 
 $( document ).ready(function() {
 
