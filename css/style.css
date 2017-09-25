@@ -84,17 +84,8 @@ ol li ul
  	width: 25%  ;
  	right:-5%;
  	z-index: 2; 
- 	
 }
-ol
-{
-	position: fixed ;
- 	bottom: 22.5%;
- 	height: 55% ;
- 	width: 25%  ;
- 	z-index: 2; 
-}
-
+ 
 ol li ul > li {
  	display: none ;
  	padding: 4%;
@@ -102,7 +93,6 @@ ol li ul > li {
 }
 ol li ul li > a
 {
-	
 	color: white ;
 	cursor: pointer ;
 }
@@ -123,7 +113,6 @@ ol > li:nth-child(2)
 }
 li a 
 {
-	
     text-decoration: none;
 }
  
@@ -135,7 +124,6 @@ li a
 	position: relative;
 	width: 55%;
 	left: 22.5%;
-	
 }
 .subCointainer a, footer a
 {
@@ -151,7 +139,7 @@ li a
 {
 	padding: 5%;
 	height: auto;
-	font-size: 2vw;
+	font-size: 2.4vw;
 	color: #FFFFFF ;
 	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
@@ -196,7 +184,7 @@ article img
 }
 footer 
 {
-	font-size: 1.3vw;
+	font-size: 1.6vw;
 	padding: 2%;
 	color: rgba(255,255,255, 0.8);
 }
@@ -224,7 +212,6 @@ footer a
 	position: fixed;
  	z-index: 2 ;
 }
-
 .contactForm 
 {
 	width: 50%;
@@ -271,3 +258,24 @@ footer a
  	display: none;
 }
 
+/* mobile view */
+@media screen and (max-width: 780px)
+ {
+	.subCointainer h2, p
+	{
+		width: 95%;
+		left: 2.5%;
+	}
+	hr
+	{
+		width: 95%;
+	}
+	.aboutME img
+	{
+		display: none;
+	}
+	ol li ul
+	{
+		bottom: 10%;
+	}
+ }
