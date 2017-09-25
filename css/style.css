@@ -1,0 +1,268 @@
+/**
+ * @author Dariusz
+ */
+body, html
+{
+	height: 100%;
+	font-family: 'Quicksand', sans-serif;
+	margin: 0;
+	padding: 0;
+ }
+.mainCointainer
+{
+	position: absolute;
+	text-align: justify;
+}
+header
+{
+	position: relative;
+}	
+h1
+ {
+ 	position: absolute;
+ 	text-align: center;
+ 	width: 50%;
+ 	margin-left: 25% ;
+ 	margin-top: 15%;
+ 	font-size: 4vw;
+ 	color: rgba(255,255,255, 0.8);
+ 	border: rgba(255,255,255, 0.8) 4px solid ;
+ }
+ a
+ {
+ 	text-decoration: none ;
+ }
+ /*
+  * kursor tekstowy
+  */
+ span
+{
+	animation: flash 1s infinite;
+}
+@keyframes flash
+{
+	to{opacity: .0;}
+}
+/*
+ * Wideo w tle strony
+ */
+ video {
+  	position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+ 	background-size: cover;
+}
+/*
+ * Nawigacja
+ */
+nav
+{
+ 	position: fixed;
+  	margin: 0;
+  	box-sizing: border-box;
+ 	font-size: 2vw;
+ 	color: #FFFFFF ;
+}
+ol, ul 
+{
+	padding: 0;
+    list-style-type: none;
+ 
+}
+ol li ul
+{
+	list-style-type: none ;
+	position: fixed ;
+ 	bottom: 22.5%;
+ 	height: 55% ;
+ 	width: 25%  ;
+ 	right:-5%;
+ 	z-index: 2; 
+ 	
+}
+ol
+{
+	position: fixed ;
+ 	bottom: 22.5%;
+ 	height: 55% ;
+ 	width: 25%  ;
+ 	z-index: 2; 
+}
+
+ol li ul > li {
+ 	display: none ;
+ 	padding: 4%;
+ 
+}
+ol li ul li > a
+{
+	
+	color: white ;
+	cursor: pointer ;
+}
+ol > li:nth-child(1)
+{
+ 	position: fixed;
+ 	bottom: 50%;
+	margin-left: 5%;
+  	float: left;
+}
+ol > li:nth-child(2)
+{
+	position: fixed ;
+	bottom: 50%;
+	right: 5%;
+	float: right;
+	
+}
+li a 
+{
+	
+    text-decoration: none;
+}
+ 
+/*
+ ZAWARTOŚĆ STRONY 
+ */
+.subCointainer h2, p
+{
+	position: relative;
+	width: 55%;
+	left: 22.5%;
+	
+}
+.subCointainer a, footer a
+{
+	color: #FFFFFF ;
+	text-decoration: none;
+    border-bottom: 1px solid white;
+}
+.subCointainer a:hover, footer a:hover
+{
+	border-bottom: 4px solid rgba(255,255,255, .0);
+}
+.aboutME, .skills, .hobby, .experience, .education, .qualifications
+{
+	padding: 5%;
+	height: auto;
+	font-size: 2vw;
+	color: #FFFFFF ;
+	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+hr
+{
+	width: 55%;
+	border: 1px #FFFFFF solid;
+}
+
+article img
+{
+	vertical-align: middle ;
+}
+.aboutME
+{
+	margin-top: 55%;
+	background-color: #2ECC71;	
+}
+.skills
+{
+	background-color: #C0392B;
+}
+.hobby
+{
+	background-color: #7F8C8D;
+}
+.experience
+{
+	background-color: #16A085;
+}
+.education
+{
+	background-color: #3498DB;
+}
+.qualifications
+{
+	background-color: #F39C12;
+}
+.simpleParalax
+{
+	padding: 16% 0 16% 0;
+}
+footer 
+{
+	font-size: 1.3vw;
+	padding: 2%;
+	color: rgba(255,255,255, 0.8);
+}
+footer a
+{
+	float: right;
+}
+/*
+ * Panel kontaktowy
+ */
+.overlay
+{
+	position: fixed ;
+	top: 0 ;
+	right: 0 ;
+	bottom: 0 ;
+	left: 0 ;
+	z-index: 1 ;
+	background-color:rgba(0,0,0, 0.89);
+	display: none ;
+	
+}
+.contactPage
+{
+	position: fixed;
+ 	z-index: 2 ;
+}
+
+.contactForm 
+{
+	width: 50%;
+	height: 55%;
+	margin-left: 25%;
+	margin-top: 15%;
+	display: none ;
+}
+.contactForm input, .contactForm textarea
+{
+	padding: 1% 0% 1% 1%;
+	color: #FFFFFF ;
+	font-size:2vm ;
+	width: 100%;
+	background: transparent ;
+	outline: none ;
+	border: solid 4px #FFFFFF ; 
+	transition: all 0.3s ease-in-out ;
+	-webkit-transition: all 0.3s ease-in-out ;
+}
+.contactForm input[type=text], .contactForm input[type=email]
+{
+	border-bottom: none ;
+}
+.contactForm input[type=submit]
+{	
+	width: 102.2% ;
+}
+.contactForm textarea 
+{
+	height: 12rem ;
+	border-bottom: none ;
+	font-size: 1.4rem ;
+}
+.contactForm input:hover, .contactForm textarea:hover
+{
+	background-color: rgba(255,255,255,0.1) ;
+}
+ .contactMore 
+{
+ 	position: fixed;
+ 	bottom: 4%;
+ 	right: 4%; 
+ 	display: none;
+}
+
