@@ -1,665 +1,172 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-<title>CV - Projekt Mgr</title>
-<meta name="author" content="Dariusz Markowicz">
-<meta name="robots" content="noindex, nofollow">
-<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-<!-- <script src="http://code.jquery.com/jquery-1.9.1.js"></script>  -->
+	<head>
+		<meta charset="utf-8">
+		<title>CV - Dariusz Markowicz</title>
+		<meta name="description" content="CV - Dariusz Markowicz, nowoczesna strona internetowa">
+		<meta name="author" content="Dariusz Markowicz">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
-<!-- <script>  -->
-<!-- $(function() { -->
-<!-- $("#includedContent").load("b.html");  -->
-<!-- });  -->
-<!-- </script> -->
-
-<style type="text/css">
-/*<![CDATA[*/ 
-html,body  {
-	font-family: 'Quicksand', sans-serif;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-::-webkit-scrollbar {
-  	  width: 0px ; 
-  	  background: transparent ;  
-}	
- 
-
-div.frontPage
-{
-	-webkit-animation: fadein 3s ;
-}
-
-@keyframes fadein {
-   	 from { opacity: 0 ; }
-   	 to   { opacity: 1 ; }
-}
-video
-{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1;
-    transform: translateX(-50%) translateY(-50%);
-	background-size: cover;
-}
-
-div.topBar
-{
-	position: fixed ;
-	top:0 ;
-	background-color:rgba(0,0,0, 0.6) ;
- 	font-size:1.9em ;
-	height: 10% ;
-	width: 100% ;
-	z-index:100 ;
-	color: #fff ;
+		<link rel="shortcut icon" href="icon.ico">
+		<link rel="stylesheet" href="css/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+		<script src="js/library/jquery-3.2.1.min.js"></script>
+		<script src="js/script.js" async></script>
+	</head>
 	
-}
-div.topBar span.contactClick
-{
-	position: inherit ;
-	top: 2% ;
-	left: 2% ;
-	cursor: pointer ;
-	display: block ;
-}
-div.topBar span.contactClick:before
-{
-	content: 'Napisz do mnie';
-}
-div.topBar span.contactClose
-{
-	display: none ;
-	position: inherit ;
-	bottom: 3% ;
-	left: 2% ;
-	cursor: pointer ;
-}
-div.topBar span.contactClose:before
-{
-	content: 'Showaj panel kontaktowy';
-}
-div.contactPage
-{
-	position: fixed ;
-	top: 0 ;
-	right: 0 ;
-	bottom: 0 ;
-	left: 0 ;
-	overflow: hidden ; 
-	display: none ;
-	background-color:rgba(0,0,0, 0.8) ;
-	z-index: 1;
-	
-	
-}
-.contactForm 
-{
-	max-width: 48%;
-	max-height: 55%;
-	margin: 15% auto ;
-	display: table ;
-}
-
-div.contactPage form
-{
-	width: 100%;
-	height: 100%;
-}
-
-div.contactPage input, div.contactPage textarea
-{
-	padding: 1% 0% 1% 1%;
-	color: #FFF ;
-	font-size:1.5em ;
-	width: 100%;
-	background: transparent ;
-	outline: none ;
-	border: solid 4px #F1C40F ; 
-	transition: all 0.3s ease-in-out ;
-	-webkit-transition: all 0.3s ease-in-out ;
-}
-div.contactPage input[type=text], div.contactPage input[type=email]
-{
-	border-bottom: none ;
-}
-div.contactPage input[type=submit]
-{	
-	margin-top: -4px ;
-	width: 102.2% ;
-}
-div.contactPage textarea 
-{
- 
-	height: 9em ;
-	border-bottom: none ;
-	font-size: 1.4em ;
-}
-
-div.contactPage input:hover, div.contactPage textarea:hover
-{
-	background-color: rgba(255,255,255,0.2) ;
-}
-
-div.contactPage .contactMore 
-{
-	position: absolute ;
-	top: 63% ;
-	right: 0% ;
-}
-div.contactPage .contactMore ul
-{
-	width: 25% ;
-	margin: 0 auto ;
-}
-div.contactPage .contactMore li
-{
-	font-size:1.8em ;
-}
-div.contactPage img 
-{
-	position: absolute ;
-	margin: 10% 49% ;
-} 
-button.indexClick, button.indexClose
-{
-	position:fixed ;
-	top: 2% ;
-	right: 2% ;
-	color: #fff ;
-	background:none ;
-	font-size:1.1em ;
-	border: none ;
-	outline:none ;
-	cursor: pointer ;
-	z-index:2 ;
-}
-button.indexClick:before
-{
-	content: url(media/yMenu.png) ;
-	position: fixed;
-	right: 5%;
-	top: 2%;
-	z-index: 1 ;
-}  
-
-div.indexCV
-{
-	position: fixed ;
-	top:10% ;
-	right: 0 ;
-	display: none ;
-	width: 25% ;
-	height: 90%;
-	background-color:rgba(0,0,0, 0.6) ;
-	z-index:100 ;
-}
-div.indexCV ul
-{
-	list-style-type: none ;
-	font-size:1.8em ;
-	margin auto 0% ;
-	padding: 0 ;
-	
-}
-div.indexCV li
-{	
-	
-	cursor: pointer ;
-}
-div.indexCV a 
-{
-	padding: 10px 30px 10px 30px ;
-	text-decoration: none ;
-	display: block ;
-	color: #fff ;
-}
-
-div.indexCV a:after 
-{
-	content: '' ;
-	display: block ;
-	height: 3px ; 
-	width: 0 ;
-	background: transparent ;
-	transition: width .5s ease, background-color .5s ease ;
-}
-div.indexCV a:hover:after 
-{
-	width: 100% ;
-	background: #F1C40F ;
-}
-button.indexClose
-{
-	display:none ;
-	position: inherit ;
-	top: 2% ;
-	right: 2.4% ;
-	
-}
-svg {
-    width: 100% ;
-    height: auto;
-	fill: rgba(0,0,0, 0.8) ;
-}
-svg text {
-	font-size: 4.4em ;	
-}
-svg mask rect 
-{
-	fill: rgba(255,255,255, 0.5) ;
-}
-svg > rect 
-{
-    -webkit-mask: url(#mask) ;	
-    mask: url(#mask) ;
-}
-div.scrollFrontPage a
-{
-	text-decoration: none ;
-	color: #000 ;
-}
-
-div.scrollFrontPage:not(.bottomBar)
-{
-	display: flex ;
-	flex-direction: column ;
-	align-items: center ;
-	justify-content: center ;
-	text-align: justify ;
-	background-color:rgba(241,196,15, 0.5) ;
-	margin-top: -0.2% ;
-}
-div.scrollFrontPage hr
-{
-	width: 100% ;
-	border: #000 1px solid ;
-}
-div.scrollFrontPage p
-{
-	font-size: 1.5em ;
-}
-div.scrollFrontPage div:not(.bottomBar)
-{
-	width: 55% ;
-}
-div.aboutME img
-{
-	vertical-align: middle ;
-}
-div.bottomBar 
-{	
-	float: left ;
-	position: relative ;
-	text-align: right ;
-	right: 2% ;
-	font-size:1.7em ;
-	cursor: pointer ;
-	padding: 20px ;
-	margin-bottom: 20px ;
-	border: solid 1px black ;
-	
-}
-div.bottomBar a
-{
-	color: #000 ;
-}
-
-@media screen and (max-width: 780px) {
-    #cv
-	{	
-		display: none ;
-	}
-	div.scrollFrontPage:not(.bottomBar)
-	{
-	background-color:rgb(241,196,15) ;
-	margin: -6%;
-	padding: 4% ;
-	padding-top: 14.5% ;
-	}
-	div.indexCV
-	{
-		width: 100% ;
-		height: 100% ;
-	}
-	div.indexCV ul
-	{
-		top: 10% ; 
-	}
-	svg
-	{
-		width: 0% ;
-		height: 0% ;
-	}
-	div.scrollFrontPage
-	{
-		text-align: justify ;
-	}
-	div.scrollFrontPage div
-	{
-		position: relative;
-		height: auto ; 
-	}
-	div.scrollFrontPage div:not(.bottomBar)
-	{
-		width: 90% ;
-	}
-	div.scrollFrontPage p
-	{
-		font-size: 1.35em;
-	}
-	div.contactPage
-	{
- 
-	}
-	div.contactPage img 
-	{
-		top: 5% ;
-		right: 48% ;
-	}
-	div.contactPage form
-	{
- 
-	}
-	div.contactPage input, div.contactPage textarea
-	{
-	 
-	}
-	div.contactPage input[type=submit]
-	{
-		 
-	}
-	div.topBar span.contactClick:before
-	{
-		content: ' ';
-	}
-	div.topBar span.contactClose:before
-	{
-		content: ' X';
-	}
-	div.contactPage .contactMore 
-	{
-		top: 55% ;
-		right: 5% ;
-	}
-	div.topBar span.contactClose
-	{
-		top: 2%;
-		left: 85%;
-	}
-	video
-	{
-		display: none ;
-	}
-}
- 
-/*]]>*/
-
-</style>
-
-</head>
-<body>
-
-<div class="frontPage">
-	<div class="topBar">
-		<span class="contactClick"><img src="media/writeIcon2.png" alt="obscurabus logo"></span>
-		<span class="contactClose"></span> 
-		<button  class="indexClick"><span id="cv">CV</span></button>
-		<button class="indexClose" >X</button>
-	</div>
-<div class="frontMovie">	
-	
-	<video poster=" " playsinline autoplay muted loop>
-	<source src="http://obscurab.us/frontMovie.mp4" type="video/mp4">
-</video>
- 
-		<svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 1920 1080" width="1920px" height="1080px" preserveAspectRatio="xMidYMid slice">
-		 <path id="path">
-			<animate attributeName="d" from="m0,750 h0" to="m0,650 h1220" dur="4.8s" begin="0s" fill="freeze"  />
-			</path>
-			<path id="path2">
-			<animate attributeName="d" from="m0,820 h0" to="m0,720 h1790" dur="5s" begin="4.8s" fill="freeze"  fill="freeze"/>
-			</path>
-					  <defs>
-						<mask id="mask" x="0" y="0" width="1920" height="1080" >
-						  <rect x="0" y="0" width="1920" height="1080"/>
-							<text  x="2%">
-							  <textPath xlink:href="#path">Pasja nie nudzi. Pasja fascynuje.</textPath>
-								</text>
-							<text x="2%">
-							  <textPath xlink:href="#path2">Tym dla mnie właśnie stało się programowanie ;-).</textPath>
-								</text>
-						</mask>
-					  </defs>
-				<rect x="0" y="0" width="1920" height="1080"/>
-		</svg>
+	<body>
+		<div class="mainCointainer">
+			<header>
+				<h1>Pasja nie nudzi. Pasja fascynuje. Tym dla mnie właśnie stało się programowanie;<span>|</span></h1>
+			</header>
+			<video poster=" " playsinline autoplay muted loop>
+				<source src="http://obscurab.us/frontMovie.mp4" type="video/mp4"></source>
+			</video>	
+			<nav>
+				<ol>
+					<li><a>Napisz do mnie</a></li>
+						
 					
-		
-	
+					<li><a>Menu</a>
+						<ul>
+							<li><a class="aboutME">				O mnie			</a></li>
+							<li><a class="skills">				Umiejętności	</a></li>
+					    	<li><a class="hobby">				Hobby 			</a></li>
+							<li><a class="experience">			Doświadczenie 	</a></li>
+							<li><a class="education">			Edukacja 		</a></li>
+							<li><a class="qualifications">		Kwalifikacje 	</a></li>
+							<li><a href="CV_2017pl.pdf" target="_blank">			Pobierz  PDF 	</a></li>
+							<li><a href="#">English Version <img src="media/ang12.png" alt="english flag"></a></li>
+						</ul>
+					</li>
+				</ol>
+			</nav>
+						<section class="overlay"></section> 
+									<div class="contactForm contactPage">
+									 
+										<form method="post" action="https://raw.githubusercontent.com/dariodari0/dariodari0.github.io/master/email.php" accept-charset="utf-8">
+												<input type="text" name="name" placeholder="Imię" >
+												<input type="email" name="email" placeholder="adres e-mail">	
+												<textarea name="message"></textarea>
+												<input type="submit" name="submit" value="Wyślij" />
+										</form>					
+									</div>
+									<div class="contactMore contactPage">
+											<a href="https://www.facebook.com/dariodaruo92" target="_blank"><img title="Mój profil na Facebooku"  src="media/facebook.png"></a>
+											<a href="https://www.linkedin.com/in/dariusz-markowicz-903447131/" target="_blank"><img title="Mój profil na LinkedIn" src="media/linkedin.png"></a>
+											<a href="https://github.com/dariodari0" target="_blank"><img title="Moje repo" src="media/githhub.png"></a>
+											<a href="tel:+48510958811"><img title="tel.\kom. +510958811" src="media/phone48.png"></a>
+									</div>
+					
+			<div class="subCointainer">
+				<article class="aboutME"> 
+						<h2> O MNIE </h2>
+						<hr>
+						<p>Krótka autoprezentacja: nazywam się Dariusz Markowicz i urodziłem się 12 lutego 1992 roku w Nowym Sączu.
+							 Jestem nastawiony na rowój będąc ambitną, odpowiedzialną i ciężko pracującą osobą. 
+							 Wykształciłem w sobie dojrzałość i umiejętność dostosowywania się do trudnych sytuacji, 
+							 zarówno w środowisku zespołowym, jak i indywidualnie. Potrafię pracować pod presją ustalonych 
+							 celów i obowiąwiązków oraz przestrzegać ścisłych terminów.
+						</p>
+						<p>Programowania zacząłem uczyć się w 2014 roku, gdy napisałem kilka najprotszych programów-kalkulatorów,
+							a zarazem uświadomiłem sobie, że jestem w stanie to robić i przynosi mi to satysfakcję kiedy odpalę 
+							w pełni działający kod. Programowania uczę się raczej samodzielnie czerpiąc więdzę z książek lub Internetu,
+							czy też od znajomych będących już developerami. Jak każdy, w tej dziedzinie poszukuję własnej ścieżki 
+							i ulunionych technologii. Pierwszym językiem jaki poznałem był język C (rozwiązywanie podręcznikowych zadań),
+							później robiłem autorską aplikację na platformę android 
+							<a href="#"  >"RoweUek"</a> <img src="media/roweuek.png" alt="roweuek logo">,
+							wróciłem do języka C ale tym razem "zainkrementowanego" celem nauki, potem na potrzeby realizacji projektu strony
+							<a href="http://www.obscurab.us" target="_blank"> obscurab.us</a> <img src="media/obscurabus.png" alt="obscurabus logo"> 
+							rozwijałem znajomość html5, css3 i js(jquery), następnie biorąc udział w Ericsson Summer School 2017 rozwijałem znajomość
+							podejścia proceduralnego i obiektowego w C++ tworząc wraz z innymi konsolową
+							<a href="https://github.com/dariodari0/Chess/blob/master/main.cpp" target="_blank"> grę w szachy</a> <img src="media/commandline.png" alt="cmd logo">.
+							Natomiast tworząc niniejszą stronę poznaję aktualne trendy w projektowaniu stron www, dzięki temu dalej się rozwijam nie tracąc zapału.
+							Niebawem stanę przed ważnym wyborem: C++ czy Front-End Development ? Lepiej skupić się na jednym :-).
+						</p>
+				</article>
+						<section class="simpleParalax"></section >
+				<article class="skills"> 
+						<h2> UMIEJĘTNOŚCI </h2>
+						<hr>
+						<p>	<strong>Kodowanie:					</strong>	C/C++, Front-End Development, Podstawy PHP&amp;MySQL.<br>
+							<strong>Standardy:					</strong>	STL, OOP, C++11, OSI model, jQuery, HTML5, CSS3. <br>     
+							<strong>Edytory &amp; kompilatory:	</strong>	Qt, cmd, NotePad++, Visual Studio, C-lion.<br>
+							<strong>System:						</strong>	Linux Manjaro17 and Win10, macOS Sierra 10.12.6.
+						</p>
+				</article>
+						<section class="simpleParalax"></section >
+				<article class="hobby">
+						<h2> HOBBY </h2>
+						<hr>
+						<p> W wolnym czasie programuje, programuje i jeszcze raz programuje! Wiem, że nauka wymaga czasu więc wolny czas też temu poświęcam!
+							Uwielbiam zagadki logiczne, ale popularnych krzyżówek nie znoszę - wolę rowziązać sudoku, grać w szachy, nauczyć się nowy kawałek
+							na gitarze akustycznej, poznać jakiś dobry serial i czekać tydzień na kolejny odcinek, szukać alternatyw i inspiracji także kiedy 
+							gotuję, realizować plany życiowe i wakacyjne, rozwiązywać problemy definitywnie, myśleć o przyszłości i postępie technologicznym,
+							analizować sytuacje i wyciągać wnioski. Wygląda na to, że mam jednno hobby jest nim rozwój osobisty, hahah.
+						</p>
+				</article>
+						<section class="simpleParalax"></section >
+				<article class="experience">
+						<h2> DOŚWIADCZENIE </h2>
+						<hr>
+						<p><strong>Projekt i realizacja strony <a href="http://www.obscurab.us" target="_blank">www.obscurab.us,</a></strong><br>
+						3 miesiące 11.2016-01.2017<br>
+						Adobe Illustrator, HTML5, CSS3, JS(jQuery): projektowanie i kodowanie, miesięczne aktualizacje oraz nadzór.
+						</p>
+			
+						<p><strong>Kucharz i instruktor, Pizza Hut, Galeria Krakowska,</strong><br>
+						18 miesięcy 03.2015- 09.2016<br>
+						Praca w bardzo wymagającym środowisku, współpraca z innymi i wielozadaniowość. Współodpowiedzialny za produkcję.
+						</p>
+			
+						<p><strong>Praktykant technik informatyk, PPUH. Studio Reklamy, Nowy Sacz,</strong><br>
+						1 miesiąc 01.2016 <br>
+						Odpowiedzialność za obsługę biura na co dzień. Okresowa aktualizacja oprogramowania i sprzętu potrzebna do zarządzania działalnością biznesową. 
+						Połączenie i zarządzanie sieciami.
+						</p>
+			
+						<p><strong>Praktykant ekonomista, P.P.H.U. ECHO, Jaworzno,</strong><br>
+						1 miesiąc 05. 2013 <br>
+						<a href="https://www.echoshop.pl/">Praktyka w sprzedaży on-line.</a> Zarządzanie ofertami internetowymi i zwiększenie ich atrakcyjności.
+						</p>
+						<p><strong>Wyjazdy zagraniczne i prace sezonowe w okresie wakacyjnym</strong><br>
+						od 2011 do 2017 <br>
+						<a href="http://www.tc-renovatingsolutions.co.uk/index.html">Remonty budowlane</a>,
+						<a href="http://www.wiczny.com/selected-projects"> stolarstwo</a>, 
+						<a href="http://www.miastons.pl/77,18127,Sadeczanin_wybudowal_barke_Cel_Paryz_i_niezwykla_artystyczna_przygoda.htm">budowa łodzi</a>
+						</p>
+				</article>
+					<section class="simpleParalax"></section >
+				<article class="education">
+						<h2> NAUKA </h2>
+						<hr>
+						<p><strong>Informatyka - Uniwersytet Ekonomiczny w Krakowie</strong><br>
+						Jestem studentem dziennych studiów, drugiego roku magistra realizując specjalizacje: systemy informacyjne.
+						</p>
+						<p><strong>Technik informatyk - policealna szkoła zawodowa w Krakowie</strong><br>
+						Ukończenie w dwuletniej szkoły zawodowej w 2016 roku i uzyskanie wszystkich kwalifikacji oraz tytułu technika informatyka.
+						</p>
+						<p><strong>Ekonomia – Uniwersytet Ekonomiczny w Krakowie</strong><br>
+						Ukończenie w roku akademickim 2013/2014, dziennych studiów licencjackich ze specjalizacją: strategie rozwoju biznesu wraz z tytułem licjencjat ekonomista.
+						</p>
+				</article>
+					<section class="simpleParalax"></section >
+				<article class="qualifications">
+						<h2> KWALIFIKACJE </h2>
+						<hr>
+						<p>Certyfikat Ericsson Summer Shool, grupa zaawansowana C++, Ericsson Sp. z o.o. Kraków</p>
+						<p>Dyplom potwierdzający kwalifikacje zawodowe technika informatyka</p>
+						<p>Certyfikat marketingu internetowego, Internetowe rewolucje, Google.</p>
+						<p>Prawo jazdy (kat. B).</p>
+						<p>Patent sternika motorowodnego</p>
+				</article>
+			</div>
+			<footer>
+				<p>
+					&copy; Copyright  by Dariusz Markowicz
+					<a class="goTop">do góry</a>
+				</p>
+			</footer>
 		</div>
-		
-<div class="indexCV">
-	<ul>
-			<li><a onclick="scrollToDivClass('aboutME');">			O mnie			</a></li>
-			<li><a onclick="scrollToDivClass('skills');">			Umiejętności	</a></li>
-	    	<li><a onclick="scrollToDivClass('hobby');">			Hobby 			</a></li>
-			<li><a onclick="scrollToDivClass('experience');">		Doświadczenie 	</a></li>
-			<li><a onclick="scrollToDivClass('education');">		Edukacja 		</a></li>
-			<li><a onclick="scrollToDivClass('qualifications');">	Kwalifikacje 	</a></li>
-			<li><a href="CV_2017pl.pdf" target="_blank">			Pobierz  PDF 	</a></li>
-			<li><a href="a4ang.html">English Version <img class="indexCVimg" src="media/ang12.png" alt="english flag"></a></li>
-	</ul>
-
-
-</div>	
-<div class="contactPage">	
-		<img src="media/letter48.png" alt="icon letter">
-		<div class="contactForm">
-					<form method="post" action="http://obscurab.us/email.php" accept-charset="ISO-8859-1">
-						<input type="text" name="name" placeholder="Imię" >
-						<input type="email" name="email" placeholder="adres e-mail">	
-						<textarea name="message"></textarea>
-						<input type="submit" name="submit" value="Wyślij" />
-					</form>					
-		</div>
-		
-		<div class="contactMore">
-			<ul>
-				<a href="https://www.facebook.com/dariodaruo92" target="_blank"><li title="Mój profil na Facebooku" style="list-style-image: url('media/facebook.png');"></li></a>
-				<a href="https://www.linkedin.com/in/dariusz-markowicz-903447131/" target="_blank"><li title="Mój profil na LinkedIn" style="list-style-image: url('media/linkedin.png');"></li></a>
-				<a href="https://github.com/dariodari0" target="_blank"><li title="Moje repo" style="list-style-image: url('media/githhub.png');"></li></a>
-				<a href="tel:+48510958811"><li title="tel.\kom. +510958811" style="list-style-image: url('media/phone48.png');"></li></a>
-					</ul>
-		</div>
-</div> 
-<div class="scrollFrontPage">
-				
- 	
-
-
-<div class="aboutME"> 
-			<h1> O MNIE </h1>
-			<hr>
-			<p>Krótka autoprezentacja: nazywam się Dariusz Markowicz i urodziłem się 12 lutego 1992 roku w Nowym Sączu. Jestem nastawiony na rowój będąc ambitną, odpowiedzialną i ciężko pracującą osobą. Wykształciłem w sobie dojrzałość i umiejętność dostosowywania się do trudnych sytuacji, zarówno w środowisku zespołowym, jak i indywidualnie. Potrafię pracować pod presją ustalonych celów i obowiąwiązków oraz przestrzegać ścisłych terminów.
-			</p>
-			<p>Programowania zacząłem uczyć się w 2014 roku, gdy napisałem kilka najprotszych programów-kalkulatorów, a zarazem uświadomiłem sobie, że jestem w stanie to robić i przynosi mi to satysfakcję kiedy odpalę w pełni działający kod. Programowania uczę się raczej samodzielnie czerpiąc więdzę z książeK lub Internetu, czy też od znajomych będących już developerami. Jak każdy, w tej dziedzinie poszukuję własnej ścieżki i ulunionych technologii. Pierwszym językiem jaki poznałem był język C (rozwiązywanie podręcznikowych zadań), później robiłem autorską aplikację na platformę android <a href="#"  >"RoweUek"<img src="media/roweuek.png" alt="roweuek logo"></a>, wróciłem do języka C ale tym razem "zainkrementowanego" celem nauki, potem na potrzeby realizacji projektu strony <a href="http://www.obscurab.us" target="_blank">obscurab.us<img src="media/obscurabus.png" alt="obscurabus logo"></a> rozwijałem znajomość html5, css3 i js(jquery), następnie biorąc udział w Ericsson Summer School 2017 rozwijałem znajomość podejścia proceduralnego i obiektowego w C++ tworząc wraz z innymi konsolową<a href="https://github.com/dariodari0/Chess/blob/master/main.cpp" target="_blank"> grę w szachy <img src="media/commandline.png" alt="cmd logo"></a>. Natomiast tworząc niniejszą stronę poznaję aktualne trendy w projektowaniu stron www, dzięki temu dalej się rozwijam nie tracąc zapału. Niebawem stanę przed ważnym wyborem: C++ czy Front-End Development ?<br /><span style="float:right"> - lepiej skupić się na jednym :-).<br /></span></p>
-	</div>
-	<div class="skills"> 
-			<h1> UMIEJĘTNOŚCI </h1>
-			<hr>
-			<p>	<strong>Kodowanie:					</strong> C/C++, Front-End Development, Podstawy PHP&amp;MySQL.<br />
-				<strong>Standardy:					</strong>  STL, OOP, C++11, OSI model, ECMAScript 6, HTML5, CSS3. <br />     
-				<strong>Edytory &amp; kompilatory:	</strong>  Qt, cmd, NotePad++, Visual Studio, C-lion.<br />
-				<strong>System:						</strong>  Linux Manjaro17 and Win10, macOS Sierra 10.12.6.</p>
-	</div>
-	<div class="hobby">
-			<h1> HOBBY </h1>
-			<hr>
-			<p> W wolnym czasie lubię rozwiązywać zagadki (sudoku, spoj.com i inne), grać w szachy ze znajomymi, czytać dobre książki także te związane z technologiami informatycznymi, grać na gitarze akustycznej, obejrzeć dobry film oraz śledzić wydarzenia na świecie. Czasami też staram się ugotować coś wyszukanego dla moich przyjaciół i angażuję się w rozwijające rozmowy przy posiłku. </p>
-	</div>
-	<div class="experience">
-			<h1> DOŚWIADCZENIE </h1>
-			<hr>
-			<p><strong>Projekt i realizacja strony dla brata, <a href="http://www.obscurab.us" target="_blank">www.obscurab.us,</a></strong><br />
-			3 miesiące 11.2016-01.2017<br />
-			Adobe Illustrator, HTML5, CSS3, JS(jQuery), PHP: projektowanie i kodowanie, miesięczne aktualizacje oraz nadzór.</p>
-
-			<p><strong>Kucharz i instruktor, Pizza Hut, Galeria Krakowska,</strong><br />
-			18 miesięcy 03.2015- 09.2016<br />
-			Praca w bardzo wymagającym środowisku, współpraca z innymi i wielozadaniowość. Współodpowiedzialny za produkcję.</p>
-
-			<p><strong>Praktykant technik informatyk, PPUH. Studio Reklamy, Nowy Sacz,</strong><br />
-			1 miesiąc 01.2016 <br />
-			Odpowiedzialność za obsługę biura na co dzień. Okresowa aktualizacja oprogramowania i sprzętu potrzebna do zarządzania działalnością biznesową. Połączenie i zarządzanie sieciami.</p>
-
-			<p><strong>Praktykant ekonomista, P.P.H.U. ECHO, Jaworzno,</strong><br />
-			1 miesiąc 05. 2013 <br />
-			<a href="https://www.echoshop.pl/">Praktyka w sprzedaży on-line.</a> Zarządzanie ofertami internetowymi i zwiększenie ich atrakcyjności.</p>
-			<p><strong>Wyjazdy zagraniczne i prace sezonowe w okresie wakacyjnym</strong><br />
-			od 2011 do 2017 <br />
-			<a href="http://www.tc-renovatingsolutions.co.uk/index.html">Remonty budowlane</a>, <a href="http://www.wiczny.com/selected-projects"> stolarstwo</a>, <a href="http://www.miastons.pl/77,18127,Sadeczanin_wybudowal_barke_Cel_Paryz_i_niezwykla_artystyczna_przygoda.htm">budowa łodzi</a></p>
-	</div>
-	<div class="education">
-			<h1> NAUKA </h1>
-			<hr>
-			<p><strong>Informatyka - Uniwersytet Ekonomiczny w Krakowie</strong><br />
-			Jestem studentem dziennych studiów, drugiego roku magistra realizując specjalizacje: systemy informacyjne.</p>
-
-			<p><strong>Technik informatyk - policealna szkoła zawodowa w Krakowie</strong><br />
-			Ukończenie w dwuletniej szkoły zawodowej w 2016 roku i uzyskanie wszystkich kwalifikacji oraz tytułu technika informatyka.</p>
-
-			<p><strong>Ekonomia – Uniwersytet Ekonomiczny w Krakowie</strong><br />
-			Ukończenie w roku akademickim 2013/2014, dziennych studiów licencjackich ze specjalizacją: strategie rozwoju biznesu wraz  z tytułem licjencjat ekonomista.</p>
-
-	</div>
-	<div class="qualifications">
-			<h1> KWALIFIKACJE </h1>
-			<hr>
-			<p>Certyfikat Ericsson Summer Shool, grupa zaawansowana C++, Ericsson Sp. z o.o. Kraków
-			<p>Świadectwo Kompetencji Zawodowych E.12, Montaż i eksploatacja komputerów osobistych i urządzeń peryferyjnych, OKE.</p>
-			<p>Świadectwo Kompetencji Zawodowych E.13, Projektowanie lokalnych sieci komputerowych i administracja sieci, OKE.</p>
-			<p>Świadectwo Kompetencji Zawodowych E.14, Rozwój sieci i baz danych oraz administrowanie bazą danych, OKE.</p>
-			<p>Certyfikat marketingu internetowego, Internetowe rewolucje, Google.</p>
-			<p>Prawo jazdy (kat. B).</p>
-	</div>
-	<div class="bottomBar">
-	<a onclick="scrollToDivClass('frontMovie');"> Do góry</a>
- 
-	</div>
-	
-</div>
-
-
-	
-</div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-<script type="text/javascript">
-	$("video").prop("volume", 0.1);
-</script>
-
-<script type="text/javascript">
-
-
-$( document ).ready(function() {
-
-	$( ".indexClick" ).click(function() {
-		$( ".indexCV" ).slideToggle( 400, function() {
-				$( ".indexClick" ).fadeOut(.003);
-				$( ".indexClose" ).delay(.003).fadeIn();
-		});
-	});
-
-
-	$( ".indexClose" ).click(function() {
-		$( ".indexCV" ).slideToggle( 400, function() {
-				$( ".indexClose" ).fadeOut(.003);
-				$( ".indexClick" ).delay(.003).fadeIn();
-		});
-		});
-
-	$(".contactClick").click(function() {
-	$( "svg" ).css("visibility", "hidden");
-	$( ".contactClick, .indexClose, .indexClick, .indexCV" ).fadeOut(.003);
-	$( ".topBar" ).css("background-color", "rgba(0,0,0, 0)");
-	$( "body" ).css("overflow-y", "hidden");
-	
-		$(".contactPage").slideToggle(400, function ()
-		{
-				$( ".contactClose" ).delay(.003).fadeIn();
-				$("video").each(function () { this.pause() });
-		});
-		
-	});
-
-	$(".contactClose").click(function () {
-	$(".contactClose" ).fadeOut(.003);
-	$( "svg" ).css("visibility", "visible").hide().fadeIn(400);;
-	$( "body" ).css("overflow-y", "");
-	$("video").each(function () { this.play() });
-		$(".contactPage").slideToggle(400, function () 
-		{	
-				$(".topBar").css("background-color", "rgba(0,0,0, 0.6)").hide().fadeIn(400);
-				$( ".contactClick, .indexClick" ).delay(.003).fadeIn();
-				
-		});
-	});	
-});
-
-</script>
-<script type="text/javascript">
-	function scrollToDivClass(divClass){
-		var div = $("div[class='"+ divClass +"']");
-		$('html,body').animate({scrollTop: div.offset().top }, 950);
-		$( ".indexClose, .indexCV" ).fadeOut(.003);
-		$(" .indexClick" ).fadeIn(.003);
-	}
-</script> 
-<script type="text/javascript">
-	var myWindow = $(window);
-	var myPosition = myWindow.scrollTop();
-	var up = false;
-	var nextScroll;
-	myWindow.scroll(function () {
-		nextScroll = myWindow.scrollTop();
-		if (nextScroll > myPosition && !up) {
-			$( ".contactPage, .indexCV, .indexClose" ).fadeOut(.003);	
-			$( ".topBar" ).stop().slideToggle();
-			up = !up;
-			console.log(up);
-		} 
-		else if(nextScroll < myPosition && up) {
-			$( ".contactClick, .indexClick" ).fadeIn(.003);	
-			$( ".topBar" ).stop().slideToggle();
-			up = !up;
-		}
-		myPosition = nextScroll;
-});
-
-</script>
-<script type="text/javascript">
-	$(document).ready(function(){       
-            var position = 0;
-            $(document).scroll(function() { 
-                position = $(this).scrollTop();
-                if(position > 600) {
-					$("video").each(function () { this.pause() });
-                } else {        
-					 $("video").each(function () { this.play() });
-                }
-            });
-        });
-</script>
-</body>
+	</body>
 </html>
