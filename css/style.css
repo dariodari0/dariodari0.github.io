@@ -38,8 +38,13 @@ h1
  span
 {
 	animation: flash 1s infinite;
+	-webkit-animation: flash 1s infinite;
 }
 @keyframes flash
+{
+	to{opacity: .0;}
+}
+@-webkit-keyframes flash
 {
 	to{opacity: .0;}
 }
