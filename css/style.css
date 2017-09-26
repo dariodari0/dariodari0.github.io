@@ -102,6 +102,7 @@ ol > li:nth-child(1)
  	bottom: 50%;
 	margin-left: 5%;
   	float: left;
+	cursor: pointer;
 }
 ol > li:nth-child(2)
 {
