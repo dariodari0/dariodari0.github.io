@@ -273,6 +273,7 @@ footer a
 	.aboutME, .skills, .hobby, .experience, .education, .qualifications
 	{
 		padding: 1%;
+		font-size: 4vw;
 	}
  
 	.aboutME img
