@@ -270,6 +270,14 @@ footer a
 	{
 		width: 95%;
 	}
+	.aboutME, .skills, .hobby, .experience, .education, .qualifications
+	{
+		padding: 1%;
+	}
+	a.aboutME, a.skills, a.hobby, a.experience, a.education, a.qualifications
+	{
+		padding: 10%;
+	}
 	.aboutME img
 	{
 		display: none;
@@ -277,5 +285,9 @@ footer a
 	ol li ul
 	{
 		bottom: 10%;
+	}
+	ol > li:nth-child(1), ol > li:nth-child(2)
+	{
+		font-size: 1rem;
 	}
  }
