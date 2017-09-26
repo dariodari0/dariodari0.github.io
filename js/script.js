@@ -8,12 +8,14 @@ window.onload = function () {
  */
  $('ol > li:nth-child(1)').click(function() {
  		$(this).fadeOut(300);
+ 		$('body').css({"overflow":"hidden"});
  		$('.contactForm, .contactMore, .overlay').fadeIn(300);
 	});
 
  $('.overlay').click(function() {
  		$('.contactForm, .contactMore, .overlay').fadeOut(300);
- 		 $('ol > li:nth-child(1)').fadeIn(300);
+ 		$('ol > li:nth-child(1)').fadeIn(300);
+ 		$('body').css({"overflow":"auto"});
 	});
 /*
  * Obsługa menu
@@ -40,3 +42,5 @@ $("a").click(function(){
     	}
     theLastScroll = anchorClass;
 });
+
+ 
