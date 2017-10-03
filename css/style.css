@@ -274,10 +274,11 @@ footer a
 /* Style dla urządzeń mobilnyych */
 @media only screen and (max-width: 500px)
  {
- 	h1
+ 	body
  	{
- 		font-size: 6.5vw;
+ 		font-family: 'Quicksand', sans-serif;
  	}
+ 
 	.subCointainer h2, p
 	{
 		width: 95%;
