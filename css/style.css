@@ -192,17 +192,19 @@ footer a
 	left: 0 ;
 	display: none ;
 }
-    .blur {
-        filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='3');
-        -webkit-filter: url(#blur-filter);
-        filter: url(#blur-filter);
-        -webkit-filter: blur(4px);
-        filter: blur(4px);
-       
-  }
-    .blur-svg {
+.blur
+{
+     filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='3');
+     -webkit-filter: url(#blur-filter);
+     filter: url(#blur-filter);
+     -webkit-filter: blur(12px);
+     filter: blur(12px);   
+     margin: -1%;
+}
+.blur-svg
+{
         display: none;
-    }
+}
 .contactPage
 {
 	position: fixed;
@@ -317,4 +319,5 @@ footer a
 	{
 	 	display: none;
 	}
+
  }
