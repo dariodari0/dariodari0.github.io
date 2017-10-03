@@ -4,7 +4,7 @@
 body, html
 {
 	height: 100%;
-	font-family: 'Quicksand', sans-serif;
+	font-family: 'Amatic SC' ;
 	margin: 0;
 	padding: 0;
  }
@@ -24,13 +24,15 @@ h1
  	width: 50%;
  	margin-left: 25% ;
  	margin-top: 15%;
- 	font-size: 4vw;
+ 	font-size: 5.3vw;
  	color: rgba(255,255,255, 0.8);
  	border: rgba(255,255,255, 0.8) 4px solid ;
  }
  a
  {
- 	text-decoration: none ;
+ 	text-decoration: none;
+ 	color: white ;
+	cursor: pointer ;
  }
  /*
   * kursor tekstowy
@@ -66,7 +68,7 @@ nav
  	position: fixed;
   	margin: 0;
   	box-sizing: border-box;
- 	font-size: 2vw;
+ 	font-size: 2.5vw;
  	color: #FFFFFF ;
 }
 ol, ul 
@@ -89,12 +91,6 @@ ol li ul
 ol li ul > li {
  	display: none ;
  	padding: 4%;
- 
-}
-ol li ul li > a
-{
-	color: white ;
-	cursor: pointer ;
 }
 ol > li:nth-child(1)
 {
@@ -102,21 +98,14 @@ ol > li:nth-child(1)
  	bottom: 50%;
 	margin-left: 5%;
   	float: left;
-	cursor: pointer;
 }
 ol > li:nth-child(2)
 {
 	position: fixed ;
 	bottom: 50%;
 	right: 5%;
-	float: right;
-	
+	float: right;	
 }
-li a 
-{
-    text-decoration: none;
-}
- 
 /*
  ZAWARTOŚĆ STRONY 
  */
@@ -128,8 +117,6 @@ li a
 }
 .subCointainer a, footer a
 {
-	color: #FFFFFF ;
-	text-decoration: none;
     border-bottom: 1px solid white;
 }
 .subCointainer a:hover, footer a:hover
@@ -140,7 +127,7 @@ li a
 {
 	padding: 5%;
 	height: auto;
-	font-size: 2.4vw;
+	font-size: 2.8vw;
 	color: #FFFFFF ;
 	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
@@ -185,7 +172,7 @@ article img
 }
 footer 
 {
-	font-size: 1.6vw;
+	font-size: 1.9vw;
 	padding: 2%;
 	color: rgba(255,255,255, 0.8);
 }
@@ -203,11 +190,19 @@ footer a
 	right: 0 ;
 	bottom: 0 ;
 	left: 0 ;
-	z-index: 1 ;
-	background-color:rgba(0,0,0, 0.89);
 	display: none ;
-	
 }
+    .blur {
+        filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='3');
+        -webkit-filter: url(#blur-filter);
+        filter: url(#blur-filter);
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+       
+  }
+    .blur-svg {
+        display: none;
+    }
 .contactPage
 {
 	position: fixed;
@@ -225,7 +220,7 @@ footer a
 {
 	padding: 1% 0% 1% 1%;
 	color: #FFFFFF ;
-	font-size:2vm ;
+	font-size:1.5em ;
 	width: 100%;
 	background: transparent ;
 	outline: none ;
@@ -241,11 +236,28 @@ footer a
 {	
 	width: 102.2% ;
 }
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #FFF;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #FFF;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #FFF;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #FFF;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #FFF;
+}
 .contactForm textarea 
 {
 	height: 12rem ;
 	border-bottom: none ;
-	font-size: 1.4rem ;
+	font-size: 1.7rem ;
 }
 .contactForm input:hover, .contactForm textarea:hover
 {
@@ -259,8 +271,8 @@ footer a
  	display: none;
 }
 
-/* mobile view */
-@media screen and (max-width: 780px)
+/* Style dla urządzeń mobilnyych */
+@media only screen and (max-width: 500px)
  {
 	.subCointainer h2, p
 	{
@@ -276,21 +288,21 @@ footer a
 		padding: 1%;
 		font-size: 4vw;
 	}
- 
 	.aboutME img
 	{
-		display: none;
+		 width: 13%;
 	}
 	ol li ul
 	{
 		bottom: 10%;
 	}
-	ol > li:nth-child(2) 
-	{
-	 	display: none;
-	}
 	ol > li:nth-child(1)
 	{
 		font-size: 1rem;
 	}
+	ol > li:nth-child(2) 
+	{
+	 	display: none;
+	}
+
  }
