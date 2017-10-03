@@ -278,7 +278,14 @@ footer a
  	{
  		font-family: 'Quicksand', sans-serif;
  	}
- 
+ 	h1
+ 	{
+ 		margin-top: 10%;
+ 	}
+ 	.mainCointainer
+	{
+		text-align: left;
+	}
 	.subCointainer h2, p
 	{
 		width: 95%;
@@ -304,11 +311,10 @@ footer a
 	ol > li:nth-child(1)
 	{
 		font-size: 1rem;
-		bottom: 80%;
+		bottom: 82.5%;
 	}
 	ol > li:nth-child(2) 
 	{
 	 	display: none;
 	}
-
  }
