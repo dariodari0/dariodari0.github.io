@@ -57,7 +57,7 @@ $("#contForm").submit(function(e) {
 	var adressURL = window.location.href;
 	var plOReng = adressURL.indexOf("en"); // zwraca index lub -1 jesli nie zawiera
 	var inputs = $("#contForm").serialize();
-        var url = "email.php"; 
+        var url = "../email.php"; 
     
     $.ajax({
            type: "POST",
