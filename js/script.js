@@ -2,7 +2,7 @@
  * @author Dariusz
  */
 $(document).ready(function()
-{
+{	
 	 $("ol > li:nth-child(1)").click(function() {
  		$(this).fadeOut(300);
  		$(".mainCointainer").addClass('blur');
@@ -24,13 +24,9 @@ $(document).ready(function()
  		$("ol > li:nth-child(2) > a").slideToggle(250);
         $("ul > li" ).slideToggle(250);
     });	
-
-
 /*
  * Nawigowanie z poziomu menu
  */
-
-
 var theLastScroll;
 
    $("a").click(function(){
@@ -46,7 +42,59 @@ var theLastScroll;
               $("html,body").animate({scrollTop: scrollToPosition }, 950 );
              }
     	}
+      else
+      {
+      	return;
+      }
     theLastScroll = anchorClass;
     });
+ /*
+  * Obsługa formularza kontaktowego
+  */    	
+  
+$("#contForm").submit(function(e) {
+
+	var adressURL = window.location.href;
+	var plOReng = adressURL.indexOf("en"); // zwraca index lub -1 jesli nie zawiera
+	var inputs = $("#contForm").serialize();
+        var url = "http://www.obscurab.us/form.php"; 
+    
+    $.ajax({
+           type: "POST",
+           url: url,
+           data: inputs,
+           complete: function()
+           {	
+               	var input = document.getElementsByTagName("input");
+               	var submitButton = document.getElementById("submitBtn");
+               		
+		for (index in input) 
+		{
+		input[index].disabled = true;
+		}
+		submitButton.style.color = "#2ECC71";
+					
+		if (plOReng == -1)
+		{
+			submitButton.value = "Wysłane!";
+			setTimeout(function()
+			      { 
+				      	submitButton.value = "Dziękuję!";
+			      }, 1500
+			  );
+		}
+		else
+		{
+			submitButton.value = "Sent!";
+			setTimeout(function()
+			      { 
+			      	submitButton.value = "Thank you!";
+			      }, 1500
+			  );
+		}				
+           }	
+           });
+      e.preventDefault();
+   });
 });
  
