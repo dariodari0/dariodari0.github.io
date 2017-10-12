@@ -35,8 +35,8 @@
 							<li><a class="experience">			Doświadczenie 	</a></li>
 							<li><a class="education">			Edukacja 		</a></li>
 							<li><a class="qualifications">		Kwalifikacje 	</a></li>
-							<li><a href="CV_2017pl.pdf" target="_blank">			Pobierz  PDF 	</a></li>
-							<!--<li><a href="#">English Version <img src="media/ang12.png" alt="english flag"></a></li>-->
+							<li><a href="media/CV_2017pl.pdf" target="_blank">			Pobierz  PDF 	</a></li>
+							<li><a href="en/">English Version <img src="media/ang12.png" alt="english flag"></a></li>
 						</ul>
 					</li>
 				</ol>
@@ -84,7 +84,7 @@
 						<h2> HOBBY </h2>
 						<hr>
 						<p> W wolnym czasie programuje, programuje i jeszcze raz programuje! Wiem, że nauka wymaga czasu więc wolny czas też temu poświęcam!
-							Uwielbiam zagadki logiczne, ale popularnych krzyżówek nie znoszę - wolę rowziązać sudoku, grać w szachy, nauczyć się nowy kawałek
+							Uwielbiam zagadki logiczne, więc popularnych krzyżówek nie znoszę - wolę rowziązać sudoku, grać w szachy, nauczyć się nowy kawałek
 							na gitarze akustycznej, poznać jakiś dobry serial i czekać tydzień na kolejny odcinek, szukać alternatyw i inspiracji także kiedy 
 							gotuję, realizować plany życiowe i wakacyjne, rozwiązywać problemy definitywnie, myśleć o przyszłości i postępie technologicznym,
 							analizować sytuacje i wyciągać wnioski. Wygląda na to, że mam jednno hobby jest nim rozwój osobisty, hahah.
@@ -163,11 +163,11 @@
 		<div class="overlay"></div>	
 			<div class="contactForm contactPage">
 									 
-				<form method="POST" action="http://www.obscurab.us/form.php"  accept-charset="utf-8">
-							<input type="text" name="name" placeholder="Imię" >
-							<input type="email" name="email" placeholder="adres e-mail">	
+				<form id="contForm" method="POST"  accept-charset="utf-8">
+							<input type="text" name="name" placeholder="Imię" required="true">
+							<input type="email" name="email" placeholder="adres e-mail" required="true">	
 							<textarea name="message"></textarea>
-							<input type="submit" name="submit" value="Wyślij" />
+							<input id="submitBtn" type="submit" name="submit" value="Wyślij" />
 				</form>					
 			</div>
 			<div class="contactMore contactPage">
