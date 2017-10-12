@@ -57,7 +57,7 @@ $("#contForm").submit(function(e) {
 	var adressURL = window.location.href;
 	var plOReng = adressURL.indexOf("en"); // zwraca index lub -1 jesli nie zawiera
 	var inputs = $("#contForm").serialize();
-        var url = "http://www.obscurab.us/form.php"; 
+        var url = "https://formspree.io/dmarkowicz@outlook.com";  
     
     $.ajax({
            type: "POST",
