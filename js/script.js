@@ -2,7 +2,9 @@
  * @author Dariusz
  */
 $(document).ready(function()
-{	
+{
+	
+	
 	 $("ol > li:nth-child(1)").click(function() {
  		$(this).fadeOut(300);
  		$(".mainCointainer").addClass('blur');
@@ -57,44 +59,52 @@ $("#contForm").submit(function(e) {
 	var adressURL = window.location.href;
 	var plOReng = adressURL.indexOf("en"); // zwraca index lub -1 jesli nie zawiera
 	var inputs = $("#contForm").serialize();
-        var url = "https://formspree.io/dmarkowicz@outlook.com";  
+    var url = "https://www.enformed.io/js770kx4"; 
     
     $.ajax({
            type: "POST",
            url: url,
            data: inputs,
-           complete: function()
-           {	
-               	var input = document.getElementsByTagName("input");
-               	var submitButton = document.getElementById("submitBtn");
+           success: function()
+           {
+           console.log("success");
+           
+                    var input = document.getElementsByTagName("input");
+           	        var submitButton = document.getElementById("submitBtn");
                		
-		for (index in input) 
-		{
-		input[index].disabled = true;
-		}
-		submitButton.style.color = "#2ECC71";
+					for (index in input) {
+						input[index].disabled = true;
+					}
+					submitButton.style.color = "#2ECC71";
 					
-		if (plOReng == -1)
-		{
-			submitButton.value = "Wysłane!";
-			setTimeout(function()
-			      { 
-				      	submitButton.value = "Dziękuję!";
-			      }, 1500
-			  );
-		}
-		else
-		{
-			submitButton.value = "Sent!";
-			setTimeout(function()
-			      { 
-			      	submitButton.value = "Thank you!";
-			      }, 1500
-			  );
-		}				
-           }	
-           });
-      e.preventDefault();
-   });
+					if (plOReng == -1)
+					{
+						submitButton.value = "Wysłane!";
+						setTimeout(function()
+						      { 
+						      	submitButton.value = "Dziękuję!";
+						      }, 1500
+						  );
+					}
+					else
+					{
+						submitButton.value = "Sent!";
+						setTimeout(function()
+						      { 
+						      	submitButton.value = "Thank you!";
+						      }, 1500
+						  );
+					}	
+       	   },
+           error: function()
+           {
+           console.log("error.");
+           alert("There is the problem. Please use: dmarkowicz@outlook.com or try later, sorry.");         	        			
+           }
+         });
+    e.preventDefault();
+});
+
+    
 });
  
