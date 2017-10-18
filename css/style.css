@@ -1,6 +1,4 @@
-/**
- * @author Dariusz
- */@import url(https://fonts.googleapis.com/css?family=Quicksand|Amatic+SC);
+@import url(https://fonts.googleapis.com/css?family=Quicksand|Amatic+SC);
 .pngfiles-sprite, .pngfiles-ang, .pngfiles-commandline, .pngfiles-facebook, .pngfiles-githhub, .pngfiles-linkedin, .pngfiles-obscurabus, .pngfiles-phone, .pngfiles-pl, .pngfiles-roweuek {
   background-image: url('../media/pngfiles-sf0b8051d81.png');
   background-repeat: no-repeat;
@@ -144,7 +142,7 @@ textarea:focus {
 }
 
 .contactForm input:hover, .contactForm textarea:hover {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .contactMore {
