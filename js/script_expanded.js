@@ -64,7 +64,7 @@ $("#contForm").submit(function(e) {
 	var adressURL = window.location.href;
 	var plOReng = adressURL.indexOf("en"); // zwraca index lub -1 jesli nie zawiera
 	var inputs = $("#contForm").serialize();
-    var url = "https://www.enformed.io/js770kx4ii"; 
+    var url = "https://www.enformed.io/js770kx4"; 
     
     $.ajax({
            type: "POST",
@@ -104,7 +104,7 @@ $("#contForm").submit(function(e) {
            error: function()
            {
            console.log("error.");
-           alert("There is the problem. Please use: dmarkowicz@outlook.com, sorry.");         	        			
+           alert("There is the problem. Please use: dmarkowicz@outlook.com or try later, sorry.");         	        			
            }
          });
     e.preventDefault();
