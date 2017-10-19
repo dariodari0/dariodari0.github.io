@@ -1,5 +1,5 @@
 /*
-Author: Dariusz Markowiczz
+* Author: Dariusz Markowiczz
 */
 @import url(https://fonts.googleapis.com/css?family=Quicksand|Amatic+SC);
 .pngfiles-sprite, .pngfiles-ang, .pngfiles-commandline, .pngfiles-facebook, .pngfiles-githhub, .pngfiles-linkedin, .pngfiles-obscurabus, .pngfiles-phone, .pngfiles-pl, .pngfiles-roweuek {
@@ -163,8 +163,6 @@ textarea:focus {
 
 .subCointainer a, footer a {
   border-bottom: 1px solid #FFF;
-  -moz-transition: border-width 0.1s ease-out;
-  -webkit-transition: border-width 0.1s ease-out;
   transition: border-width 0.1s ease-out;
 }
 .subCointainer a:hover, footer a:hover {
@@ -175,7 +173,7 @@ textarea:focus {
   padding: 5%;
   height: auto;
   font-size: 2vw;
-  color: rgba(255, 255, 255, 0.8);
+  color: #FFF;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
@@ -232,15 +230,8 @@ video {
 }
 
 #cursorText {
-  -moz-animation: flash 1s infinite;
   -webkit-animation: flash 1s infinite;
   animation: flash 1s infinite;
-}
-
-@-moz-keyframes flash {
-  to {
-    opacity: .0;
-  }
 }
 @-webkit-keyframes flash {
   to {
@@ -368,5 +359,3 @@ MOBILE
     display: none;
   }
 }
-
-/*# sourceMappingURL=style.css.map */
