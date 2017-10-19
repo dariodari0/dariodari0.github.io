@@ -1,6 +1,8 @@
 /**
  * @author Dariusz
  */
+"use strict"; 
+
 $(document).ready(function()
 {
 	
@@ -21,10 +23,13 @@ $(document).ready(function()
 /*
  * Obsługa menu
  */	
- $("ol > li:nth-child(2)").hover(function (e) {   
- 		e.preventDefault;
+ $("ol > li:nth-child(2)").hover(function (e) { 
+             if (e)
+             {
+                 e.preventDefault();
+             }
  		$("ol > li:nth-child(2) > a").slideToggle(250);
-        $("ul > li" ).slideToggle(250);
+                $("ul > li" ).slideToggle(250);
     });	
 /*
  * Nawigowanie z poziomu menu
@@ -32,13 +37,13 @@ $(document).ready(function()
 var theLastScroll;
 
    $("a").click(function(){
-   	  var gotop = "goTop";
+      var gotop = "goTop";
       var anchorClass = $(this).attr("class");
       
       if (anchorClass === gotop) {$(window).scrollTop(0);}
-      else if(!(theLastScroll === anchorClass))
+      else if(theLastScroll !== anchorClass)
       {
-      		  var articleClass = $("article[class='"+ anchorClass +"']");
+      	     var articleClass = $("article[class='"+ anchorClass +"']");
               if (articleClass.length) {
               var scrollToPosition = articleClass.offset().top - $(window).height()/12;
               $("html,body").animate({scrollTop: scrollToPosition }, 950 );
@@ -53,13 +58,13 @@ var theLastScroll;
  /*
   * Obsługa formularza kontaktowego
   */    	
-  
+ 
 $("#contForm").submit(function(e) {
 
 	var adressURL = window.location.href;
 	var plOReng = adressURL.indexOf("en"); // zwraca index lub -1 jesli nie zawiera
 	var inputs = $("#contForm").serialize();
-    var url = "https://www.enformed.io/js770kx4"; 
+    var url = "https://www.enformed.io/js770kx4ii"; 
     
     $.ajax({
            type: "POST",
@@ -72,12 +77,12 @@ $("#contForm").submit(function(e) {
                     var input = document.getElementsByTagName("input");
            	        var submitButton = document.getElementById("submitBtn");
                		
-					for (index in input) {
+					for (var index in input) {
 						input[index].disabled = true;
 					}
 					submitButton.style.color = "#2ECC71";
 					
-					if (plOReng == -1)
+					if (plOReng === -1)
 					{
 						submitButton.value = "Wysłane!";
 						setTimeout(function()
@@ -99,7 +104,7 @@ $("#contForm").submit(function(e) {
            error: function()
            {
            console.log("error.");
-           alert("There is the problem. Please use: dmarkowicz@outlook.com or try later, sorry.");         	        			
+           alert("There is the problem. Please use: dmarkowicz@outlook.com, sorry.");         	        			
            }
          });
     e.preventDefault();
