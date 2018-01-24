@@ -48,7 +48,7 @@ $(document).ready(function() {
      * Navigation function
      */
     let theLastScroll;
-    $("ul").on('click', 'a', function() {
+    $("ul, footer").on('click', 'a', function() {
         const gotop = "goTop";
         let anchorClass = $(this).attr("class");
         if (anchorClass === gotop) {
