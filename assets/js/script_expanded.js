@@ -1,115 +1,96 @@
 /**
  * @author Dariusz
  */
-"use strict"; 
+"use strict";
 
-$(document).ready(function()
-{
-	
-	
-	 $("ol > li:nth-child(1)").click(function() {
- 		$(this).fadeOut(300);
- 		$(".mainCointainer").addClass('blur');
- 		$("body").css({"overflow":"hidden"});
- 		$(".contactForm, .contactMore, .overlay").fadeIn(300);
-	});
-
- $(".overlay").click(function() {
- 		$(".contactForm, .contactMore, .overlay").fadeOut(300);
- 		$(".mainCointainer").removeClass('blur');
- 		$("ol > li:nth-child(1)").fadeIn(300);
- 		$("body").css({"overflow":"auto"});
-	});
-/*
- * Obsługa menu
- */	
- $("ol > li:nth-child(2)").hover(function (e) { 
-             if (e)
-             {
-                 e.preventDefault();
-             }
- 		$("ol > li:nth-child(2) > a").slideToggle(250);
-                $("ul > li" ).slideToggle(250);
-    });	
-/*
- * Nawigowanie z poziomu menu
- */
-var theLastScroll;
-
-   $("a").click(function(){
-      var gotop = "goTop";
-      var anchorClass = $(this).attr("class");
-      
-      if (anchorClass === gotop) {$(window).scrollTop(0);}
-      else if(theLastScroll !== anchorClass)
-      {
-      	     var articleClass = $("article[class='"+ anchorClass +"']");
-              if (articleClass.length) {
-              var scrollToPosition = articleClass.offset().top - $(window).height()/12;
-              $("html,body").animate({scrollTop: scrollToPosition }, 950 );
-             }
-    	}
-      else
-      {
-      	return;
-      }
-    theLastScroll = anchorClass;
+$(document).ready(function() {
+    $("ol > li:nth-child(1)").click(function() {
+        $(this).fadeOut(300);
+        $(".mainCointainer").addClass('blur');
+        $("body").css({
+            "overflow": "hidden"
+        });
+        $(".contactForm, .contactMore, .overlay").slideDown(300);
     });
- /*
-  * Obsługa formularza kontaktowego
-  */    	
+
+    $(".overlay").click(function() {
+        $(".contactForm, .contactMore, .overlay").fadeOut(222);
+        $(".mainCointainer").removeClass('blur');
+        $("ol > li:nth-child(1)").slideDown(300);
+        $("body").css({
+            "overflow": "auto"
+        });
+    });
+    /*
+     * Menu - remove the bug with mouse handler event  [updating on 24 January 2018]
+     */
+    $("ul").on('mouseenter', function() {
+            $("ol > li:nth-child(2) > a").slideUp();
+            $("ul > li").slideDown();
+        })
+        .on('mouseleave', function(e) {
+            let menuCoords = $(this).position();
+            isMouseleave(e, menuCoords);
+        });
+	//ES6 and jQuery
+    let isMouseleave = (e, menuCoords) => {
+        let x;
+        e = e || window.event; //for IE support
+        x = e.clientX;
+        if (x < menuCoords.left) {
+            $("ol > li:nth-child(2) > a").slideDown();
+            $("ul > li").slideUp('fast');
+        }
+        false;
+    }
  
-$("#contForm").submit(function(e) {
+    /*
+     * Navigation function
+     */
+    let theLastScroll;
+    $("ul").on('click', 'a', function() {
+        const gotop = "goTop";
+        let anchorClass = $(this).attr("class");
+        if (anchorClass === gotop) {
+            $(window).scrollTop(0);
+        } else if (theLastScroll !== anchorClass) {
+            let articleClass = $("article[class='" + anchorClass + "']");
+            if (articleClass.length) {
+                let scrollToPosition = articleClass.offset().top - $(window).height() / -24;
+                $("html,body").animate({
+                    scrollTop: scrollToPosition
+                }, 950);
+            }
+        }
+        theLastScroll = anchorClass;
+    });
+    /*
+     * Script for sending an email
+     */
 
-	var adressURL = window.location.href;
-	var plOReng = adressURL.indexOf("en"); // zwraca index lub -1 jesli nie zawiera
-	var inputs = $("#contForm").serialize();
-    var url = "https://www.enformed.io/js770kx4"; 
-    
-    $.ajax({
-           type: "POST",
-           url: url,
-           data: inputs,
-           success: function()
-           {
-           console.log("success");
-           
-                    var input = document.getElementsByTagName("input");
-           	        var submitButton = document.getElementById("submitBtn");
-               		
-					for (var index in input) {
-						input[index].disabled = true;
-					}
-					submitButton.style.color = "#2ECC71";
-					
-					if (plOReng === -1)
-					{
-						submitButton.value = "Wysłane!";
-						setTimeout(function()
-						      { 
-						      	submitButton.value = "Dziękuję!";
-						      }, 1500
-						  );
-					}
-					else
-					{
-						submitButton.value = "Sent!";
-						setTimeout(function()
-						      { 
-						      	submitButton.value = "Thank you!";
-						      }, 1500
-						  );
-					}	
-       	   },
-           error: function()
-           {
-           console.log("error.");
-           alert("There is the problem. Please use: dmarkowicz@outlook.com or try later, sorry.");         	        			
-           }
-         });
-    e.preventDefault();
-});
+    $("#contForm").submit(function(o) {
+        var e = window.location.href,
+            t = e.indexOf("pl"),
+            l = $("#contForm").serialize(),
+            n = "https://www.enformed.io/js770kx4";
+        $.ajax({
+            type: "POST",
+            url: n,
+            data: l,
+            success: function() {
+                var o = document.getElementById("submitBtn");
+                o.style.color = "#2ECC71", -1 !== t ? (o.value = "Wysłane!", setTimeout(function() {
+                    o.value = "Dziękuję!"
+                }, 1500)) : (o.value = "Sent!", setTimeout(function() {
+                    o.value = "Thank you!"
+                }, 1500)), o.setAttribute("disabled", "disabled")
+            },
+            error: function() {
+                alert("There is the problem. Please use: dmarkowicz@outlook.com or try later, sorry.")
+            }
+        }), o.preventDefault()
+    });
 
-    
+
 });
  
